@@ -8,6 +8,7 @@
 
 //  Weapon Info: Damage: Base Damage, weapon_spill means the diceroll variance. Eg: Weapon Damage 5, spill of 2, means the base damage is 5-2 to 5+2 (3 - 7)
 //  Critical Chance: Base of 5%. Increased by skills / items. (Math.ceil(Math.random()* 100)
+//  Critical hits do 150% damage (maybe increase in future via effects) - Round down to integer
 
 
 const player = {
@@ -16,13 +17,15 @@ const player = {
   exp: 0,
   exp_req: 100,
   health: 100,
+  health_max: 100,
   mana: 20,
+  mana_max: 20,
   crit_chance: 5,
   // armor: 0,    //* Future when armor is added
   strength: 5,
   agility: 5,
   intelligence: 5,
-  gold: 100,
+  gold: 0,
   equipment: {          // ! Add equipment via js next time (find by itemid)
     weapon: {     
       name: "Rusty Sword",

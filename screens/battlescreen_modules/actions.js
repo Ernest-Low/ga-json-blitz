@@ -8,12 +8,11 @@ const $actions = () => {
       width: "50%",
       height: "100%",
       color: "ghostwhite",
-      "background-color": "gray",
-      "font-size": "2rem",
+      "background-color": "rgba(255,255,255,0)",
+      "font-size": "1.5rem",
       "text-align": "center",
-      border: "2px solid black",
-      "align-items": "center",
-      "vertical-align": "middle",
+      border: "none",
+      "font-family": "Alagard",
     })
     .text("ATTACK")
     .on("click", () => {
@@ -25,46 +24,43 @@ const $actions = () => {
       width: "50%",
       height: "100%",
       color: "ghostwhite",
-      "background-color": "gray",
-      "font-size": "2rem",
+      "background-color": "rgba(255,255,255,0)",
+      "font-size": "1.5rem",
       "text-align": "center",
-      border: "2px solid black",
-      "align-items": "center",
-      "vertical-align": "middle",
+      border: "none",
+      "font-family": "Alagard",
     })
     .text("SKILLS")
     .on("click", () => {
       console.log("Using a skill");
     });
-  const $items = $("<items>")
+  const $items = $("<button>")
     .attr("id", "btnitems")
     .css({
       width: "50%",
       height: "100%",
       color: "ghostwhite",
-      "background-color": "gray",
-      "font-size": "2rem",
+      "background-color": "rgba(255,255,255,0)",
+      "font-size": "1.5rem",
       "text-align": "center",
-      border: "2px solid black",
-      "align-items": "center",
-      "vertical-align": "middle",
+      border: "none",
+      "font-family": "Alagard",
     })
     .text("ITEMS")
     .on("click", () => {
       console.log("Using a item");
     });
-  const $run = $("<run>")
+  const $run = $("<button>")
     .attr("id", "btnrun")
     .css({
       width: "50%",
       height: "100%",
       color: "ghostwhite",
-      "background-color": "gray",
-      "font-size": "2rem",
+      "background-color": "rgba(255,255,255,0)",
+      "font-size": "1.5rem",
       "text-align": "center",
-      border: "2px solid black",
-      "align-items": "center",
-      "vertical-align": "middle",
+      border: "none",
+      "font-family": "Alagard",
     })
     .text("RUN")
     .on("click", () => {

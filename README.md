@@ -92,9 +92,6 @@ Main Screen
 *---------------------*
 
 
-
-
-
 Battle Screen
 Action States: 
 > Attack / Spells / Items
@@ -131,7 +128,7 @@ Inbetween Fights
 |   Gains (Exp etc)   |
 |   Loot Loot Loot    |
 |                     |
-|[Next] [Shop] [Inven]|
+| [Next] [Shop] [Self]|
 *---------------------*
 - Also need to design inventory system
 > Equipment
@@ -148,27 +145,32 @@ Scaling off Str, Agi, Int
 - Others just deal damage
 
 
+Shop
+- Plain text in a screen for now (Popup or dedicated screen?)
+- Possibly have an image serve as background (shop scenery)
+
 
 Enemy targeting
 > For scaling, assign enemy target as a variable.
     - Adds possiblity for changing enemy target in future (multiple enemies)
     - Also save the enemy in an array probably
 
-
-Shop
-- Plain text in a screen for now (Popup or dedicated screen?)
-- Possibly have an image serve as background (shop scenery)
-
-
 HP Bars (Enemies)
 - Enemies to have hp bar above their head
 - ? Should enemies have their hp bars listed in a grid too?
     > Probably only when targeting them
+-- On hit, have a large red number flash to show the damage inflicted over the character
+https://www.w3schools.com/js/js_events.asp
+
+Progress Bar:
+- https://www.w3schools.com/w3css/w3css_progressbar.asp
+> Potential usage for HP/MP bar
 
 
 Flexbox Overflow
 - https://stackoverflow.com/questions/47446258/css-flexbox-overflow-100-width-elements
 - overflow: hidden;
+> Can't seem to get rid of that small space below?
 
 
 Audio (Music / Sounds)
@@ -192,6 +194,7 @@ Animation Typing effect:
 > Good to learn keyframe animation
 > https://www.w3schools.com/cssref/css3_pr_animation-keyframes.asp
 
+    - Animate: Leveling effect / exp progress bar
 
 JSON Files for datastoring
 - https://www.w3schools.com/js/js_json_parse.asp

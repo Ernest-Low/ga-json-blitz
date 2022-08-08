@@ -7,48 +7,52 @@ const battleScreen = () => {
     display: "flex",
     "flex-direction": "column",
     "z-index": 1,
-    "background-color": "black",
-    width: "95vw",
+    width: "80vw",
     height: "95vh",
-    border: "3px solid blue",
+    border: "4px solid blue",
     overflow: "hidden",
   });
 
   const $battlescene = $("<div>").attr("id", "battlescene").css({
     width: "100%",
     height: "75%",
-    "background-color": "lightblue", // Placeholder
+    "background-image": "url('../image_data/Zone2_Background.png')",
+    "background-size": "100% 100%",
+    "background-repeat": "no-repeat",
+    "object-fit" : "fill",
     "z-index": 2,
   });
 
   const $battlewindow = $("<div>").attr("id", "battlewindow").css({
     width: "100%",
     height: "25%",
-    "background-color": "yellow",
     "z-index": 2,
     display: "flex",
     "flex-direction": "row",
-    border: "3px solid grey",
     overflow: "hidden",
   });
 
   const $actionpanel = $("<div>").attr("id", "actionpanel").css({
-    width: "50%",
+    width: "35%",
     height: "100%",
-    "background-color": "green",
-    "border-right": "2px solid white",
+    "background-image": "url('../image_data/btm_Right_4panel.png')",
+    "background-size": "100% 100%",
+    "background-repeat": "no-repeat",
+    "object-fit" : "fill",
   });
 
   const $characterpanel = $("<div>").attr("id", "characterpanel").css({
-    width: "50%",
+    width: "65%",
     height: "100%",
-    "background-color": "orange",
-    "border-left": "2px solid white",
+    "background-image": "url('../image_data/btm_Left_Panel.png')",
+    "background-size": "100% 100%",
+    "background-repeat": "no-repeat",
+    "object-fit" : "fill",
   });
 
   $("body").append($battlescreen);
   $battlescreen.append($battlescene, $battlewindow);
-  $battlewindow.append($actionpanel, $characterpanel);
+  $battlewindow.append($characterpanel, $actionpanel);
   $actionpanel.append($actions);
 
   // $mainscreen.append($("<h1>").text("Hello World").css("color", "white"));

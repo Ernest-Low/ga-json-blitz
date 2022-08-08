@@ -17,17 +17,19 @@
 //  * Critical chance (Double damage) - Base of 3%. Critical damage = 50% more damage (round down)
 //  * > Critical chance increases by 1% per monster level above the player
 
-
 const monsters = [
-    {
-        name: "Goblin",
-        level: 1,
-        health: 20,
-        armor: 0,
-        damage: 7,
-        damage_spill: 3,
-        skills: [],
-    }
-]
+  {
+    name: "Goblin",
+    level: 1,
+    health: 20,
+    armor: 0,
+    strength: 5,
+    agility: 5,
+    intelligence: 5,
+    damage: 7,
+    damage_spill: 3,
+    skills: [],
+  },
+];
 
 export default monsters;

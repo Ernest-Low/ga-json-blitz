@@ -9,10 +9,10 @@ const mainScreen = () => {
     "background-image": "url('../image_data/Game_Landing_Page.png')",
     "background-size": "100% 100%",
     "background-repeat": "no-repeat",
-    "background-attachment": "fixed",
-    width: "95vw",
+    "object-fit" : "fill",
+    width: "80vw",
     height: "95vh",
-    border: "3px solid blue",
+    border: "4px solid blue",
     overflow: "hidden",
   });
 
@@ -34,9 +34,10 @@ const mainScreen = () => {
     .css({
       color: "white",
       "background-color": "rgba(0,0,0,0.8)",
-      "font-size": "1rem",
+      "font-size": "1.5rem",
       width: "100%",
       height: "25%",
+      "font-family": "Alagard",
     })
     .on("click", () => console.log("Start Clicked"));
 
@@ -46,9 +47,10 @@ const mainScreen = () => {
     .css({
       color: "white",
       "background-color": "rgba(0,0,0,0.8)",
-      "font-size": "1rem",
+      "font-size": "1.5rem",
       width: "100%",
-      height: "25%",
+      "height": "25%",
+      "font-family": "Alagard"
     })
     .on("click", () => console.log("Settings Clicked"));
 
