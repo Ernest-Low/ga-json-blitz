@@ -34,9 +34,14 @@ Multiplayer - Solo play has great potential, but multiplayer always add another 
 
 !! Buttons !!
 https://www.w3schools.com/howto/howto_css_text_buttons.asp
-Probably better than adding text and a button next to it
-Add forced width to make it fill the entire width? (width 100%)
-Highlight to show its selected (good for future arrowkey play)
+- Probably better than adding text and a button next to it
+- Add forced width to make it fill the entire width? (width 100%)
+- Highlight to show its selected (good for future arrowkey play)
+
+
+Javascript Array Methods instead of FOR loops
+- Avoid using for loop when possible to loop through arrays
+> Utilise javascript array methods.
 
 
 Render
@@ -48,6 +53,8 @@ Render
 Screen Management
 - Using a variable to remember which screen is active?
 - Maybe ??? Using a constant black screen to hide / show elements? (Control Z axis)
+- https://www.w3schools.com/cssref/pr_pos_z-index.asp
+- View width: 95vw. View HeighT: 95vh. (80% of screen)
 
 
 Storyboard
@@ -88,17 +95,21 @@ Main Screen
 
 
 
-Game Screen
+Battle Screen
 Action States: 
 > Attack / Spells / Items
 - Attack (just basic attack using weapondamage calculation)
 - Spells (consume mp, attack using abilities)
 - Items (open consumables window) (might be scrollable https://www.geeksforgeeks.org/making-a-div-vertically-scrollable-using-css/ )
-> Explore other options?
+> Run (Abandon current zone run, return to start of zone)
+    - Lose all current exp
+    - Lose % of gold (probably half)
 
 Find a place for messagebox? (find a beter spot) (or replace action box with messages (click to progress next?))
 Background: encompass player / enemy / messagebox? (black opacity message box? Utilise alpha channel background color not opacity)
 
+> Try the text typewriter option to put in the actionbox?
+> Action buttons can look nicer - shove text to left and make narrow buttons?
 
 *---------------------*         
 | player        enemy |
@@ -108,6 +119,8 @@ Background: encompass player / enemy / messagebox? (black opacity message box? U
 | action  |player info|
 | action  |enemy info |
 *---------------------*
+
+
 
 Idea: Popup a box (not alert) to notify after each battle, for next action:
 
@@ -142,5 +155,44 @@ Enemy targeting
     - Also save the enemy in an array probably
 
 
+Shop
+- Plain text in a screen for now (Popup or dedicated screen?)
+- Possibly have an image serve as background (shop scenery)
 
 
+HP Bars (Enemies)
+- Enemies to have hp bar above their head
+- ? Should enemies have their hp bars listed in a grid too?
+    > Probably only when targeting them
+
+
+Flexbox Overflow
+- https://stackoverflow.com/questions/47446258/css-flexbox-overflow-100-width-elements
+- overflow: hidden;
+
+
+Audio (Music / Sounds)
+- https://www.w3schools.com/jsref/met_audio_play.asp
+- var audio = new Audio('audio_file.mp3');
+- audio.play
+- audio.pause (to stop)
+
+
+Fade effect
+- @keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+- Utilise CSS animation
+
+
+Animation Typing effect:
+- https://css-tricks.com/snippets/css/typewriter-effect/
+- Can ignore the blink-caret if it doesn't look nice
+> Good to learn keyframe animation
+> https://www.w3schools.com/cssref/css3_pr_animation-keyframes.asp
+
+
+JSON Files for datastoring
+- https://www.w3schools.com/js/js_json_parse.asp
+> Try to change all the data_files to json format instead of saving them as .js files.

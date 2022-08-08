@@ -12,3 +12,22 @@
 //  * Monster exp:   100 - 118  139 - 172   184 - 232   235 - 298   292 - 370   355 - 448   424 - 532   499 - 622   580 - 718   667 - 820
 //  3n^2 + 30n + 67 to  3n^2 + 45n + 70
 
+//  ? Monster Damage Calculation
+//  * Damage window = (damage - damage_spill) to (damage + damage_spill)
+//  * Critical chance (Double damage) - Base of 3%. Critical damage = 50% more damage (round down)
+//  * > Critical chance increases by 1% per monster level above the player
+
+
+const monsters = [
+    {
+        name: "Goblin",
+        level: 1,
+        health: 20,
+        armor: 0,
+        damage: 7,
+        damage_spill: 3,
+        skills: [],
+    }
+]
+
+export default monsters;
