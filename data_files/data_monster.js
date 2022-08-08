@@ -29,6 +29,7 @@ const monsters = [
     damage: 7,
     damage_spill: 3,
     skills: [],
+    status: [],
   },
 ];
 

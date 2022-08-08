@@ -1,8 +1,9 @@
-import $actions from "./battlescreen_modules/actions.js";
+import $actions from "./modules/actions.js";
+import $actionText from "./modules/actiontext.js";
 
 //* Render Battle Screen (Fighting scene)
 const battleScreen = () => {
-  //  Battlescreen cover
+  //  Battlescreen Window
   const $battlescreen = $("<div>").attr("id", "battlescreen").css({
     display: "flex",
     "flex-direction": "column",
@@ -13,51 +14,57 @@ const battleScreen = () => {
     overflow: "hidden",
   });
 
+  //  Top scene
   const $battlescene = $("<div>").attr("id", "battlescene").css({
     width: "100%",
     height: "75%",
-    "background-image": "url('../image_data/Zone2_Background.png')",
+    "background-image": "url('../image_data/Zone_1_Background.png')",
     "background-size": "100% 100%",
     "background-repeat": "no-repeat",
-    "object-fit" : "fill",
+    "object-fit": "fill",
     "z-index": 2,
   });
 
+  //  Bottom Windows
   const $battlewindow = $("<div>").attr("id", "battlewindow").css({
     width: "100%",
     height: "25%",
     "z-index": 2,
     display: "flex",
     "flex-direction": "row",
+    "background-color": "#663a31",
     overflow: "hidden",
   });
 
+  //  Bottom right panel (4 grid)
   const $actionpanel = $("<div>").attr("id", "actionpanel").css({
     width: "35%",
     height: "100%",
     "background-image": "url('../image_data/btm_Right_4panel.png')",
     "background-size": "100% 100%",
     "background-repeat": "no-repeat",
-    "object-fit" : "fill",
+    "object-fit": "fill",
   });
 
-  const $characterpanel = $("<div>").attr("id", "characterpanel").css({
+  //  Bottom Left Panel (Long box)
+  const $longpanel = $("<div>").attr("id", "longpanel").css({
     width: "65%",
     height: "100%",
     "background-image": "url('../image_data/btm_Left_Panel.png')",
-    "background-size": "100% 100%",
+    "background-size": "100% 90%",
     "background-repeat": "no-repeat",
-    "object-fit" : "fill",
+    "object-fit": "fill",
+    padding: "0.8rem 1.3rem 0.8rem 1.3rem",
   });
 
+  //  Add elements
   $("body").append($battlescreen);
   $battlescreen.append($battlescene, $battlewindow);
-  $battlewindow.append($characterpanel, $actionpanel);
+  $battlewindow.append($longpanel, $actionpanel);
   $actionpanel.append($actions);
+  $longpanel.append($actionText);
 
-  // $mainscreen.append($("<h1>").text("Hello World").css("color", "white"));
-  // $textbox.append($("<h2>").text("Hello Me").css("color", "white"));
-  console.log("Loaded Battlescreen?");
+  console.log("Loaded Battlescreen");
 };
 
 export default battleScreen;

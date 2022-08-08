@@ -10,6 +10,8 @@
 //  Critical Chance: Base of 5%. Increased by skills / items. (Math.ceil(Math.random()* 100)
 //  Critical hits do 150% damage (maybe increase in future via effects) - Round down to integer
 
+//* Potential Speed set - Progress bar for who moves (Boot icon?!) - Maybe multiple turns
+
 
 const player = {
   name: "",
@@ -43,6 +45,7 @@ const player = {
     },
   ],
   skills:[],
+  status:[],
 };
 
 export default player;

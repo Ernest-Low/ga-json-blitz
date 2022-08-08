@@ -1,8 +1,82 @@
-@font-face {
-    font-family: Alagard;
-    src: url(./font/alagard.ttf);
-  }
+/* Specificity : https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity */
 
-button:hover{
-    background-color: rgba(255,255,255,0.3);
+@font-face {
+  font-family: Alagard;
+  src: url(./font/alagard.ttf);
 }
+
+.actionbutton:active {
+  background-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+#actiontext {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  letter-spacing: 0.15em; /* Adjust as needed */
+  animation: typing 3.5s steps(40, end);
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+
+/*
+
+*/
+
+/*
+
+*/
+
+/*
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+
+button {
+  padding: 10px;
+  color: rgba(207, 50, 50, 0.822);
+  font-weight: bold;
+  background-color: aquamarine;
+  box-shadow: 3px 3px rgba(207, 50, 50, 0.39);
+}
+
+button:hover {
+  background-color: pink;
+}
+
+button:active {
+  box-shadow: 1.5 1.5px rgba(207, 50, 50, 0.39);
+  transform: translateY(2px);
+}
+
+
+*/

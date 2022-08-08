@@ -4,6 +4,7 @@
 const $actions = () => {
   const $attack = $("<button>")
     .attr("id", "btnattack")
+    .addClass("actionbutton")
     .css({
       width: "50%",
       height: "100%",
@@ -20,6 +21,7 @@ const $actions = () => {
     });
   const $skills = $("<button>")
     .attr("id", "btnskills")
+    .addClass("actionbutton")
     .css({
       width: "50%",
       height: "100%",
@@ -36,6 +38,7 @@ const $actions = () => {
     });
   const $items = $("<button>")
     .attr("id", "btnitems")
+    .addClass("actionbutton")
     .css({
       width: "50%",
       height: "100%",
@@ -52,6 +55,7 @@ const $actions = () => {
     });
   const $run = $("<button>")
     .attr("id", "btnrun")
+    .addClass("actionbutton")
     .css({
       width: "50%",
       height: "100%",

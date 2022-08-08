@@ -82,6 +82,9 @@ Main Screen
 - Settings (What else would they change, sound etc?)
 - Customization? (Future)
 
+>> Press Start, "Enter Protagonist Name" into inputbox
+    > Enter!
+
 *---------------------*         
 |                     |
 |                     |
@@ -96,8 +99,10 @@ Battle Screen
 Action States: 
 > Attack / Spells / Items
 - Attack (just basic attack using weapondamage calculation)
-- Spells (consume mp, attack using abilities)
-- Items (open consumables window) (might be scrollable https://www.geeksforgeeks.org/making-a-div-vertically-scrollable-using-css/ )
+- Skills (consume mp, attack using abilities)
+    > Name of skill - hover for tooltip (icon maybe)
+- Items (open consumables window) (might be scrollable https://www.geeksforgeeks.org/making-a-div-vertically-scrollable-using-css/ )\
+    > Name of item - hover for tooltip (icon maybe)
 > Run (Abandon current zone run, return to start of zone)
     - Lose all current exp
     - Lose % of gold (probably half)
@@ -170,7 +175,7 @@ Progress Bar:
 Flexbox Overflow
 - https://stackoverflow.com/questions/47446258/css-flexbox-overflow-100-width-elements
 - overflow: hidden;
-> Can't seem to get rid of that small space below?
+> Can't seem to get rid of that small space below? Currently covered up by #663a31 (might be an image import fit into div problem)
 
 
 Audio (Music / Sounds)
