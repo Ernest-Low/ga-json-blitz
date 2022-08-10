@@ -204,3 +204,16 @@ Animation Typing effect:
 JSON Files for datastoring
 - https://www.w3schools.com/js/js_json_parse.asp
 > Try to change all the data_files to json format instead of saving them as .js files.
+
+
+
+Character / Monster Image
+- Might need to add an image-size property to make the div bigger / smaller to not make the enemy so small
+
+GIFS
+- https://www.hongkiat.com/blog/on-click-animated-gif/
+> Find some other way?
+
+
+Targeting System:
+- Idea: Click enemy target to target them

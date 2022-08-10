@@ -3,6 +3,7 @@ import current_entities from "./entities";
 import player from "../data_files/data_player.js";
 import zones from "../data_files/data_zone";
 import zone_control from "./scene_control/zone_control.js";
+import current_fight from "./current_fight";
 
 //* Render Mainscreen (Aka main)
 const mainScreen = () => {
@@ -68,6 +69,8 @@ const mainScreen = () => {
       //! Declared forest as zone (temp)
       current_entities.zone = JSON.parse(JSON.stringify(zones.forest));
       zone_control();
+      current_fight();
+
 
       //  Remove mainscreen (Temp), ask for player input for name
       $("#mainscreen").fadeOut(2000);

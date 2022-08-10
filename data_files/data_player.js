@@ -23,7 +23,7 @@ const player = {
   mana: 20,
   mana_max: 20,
   crit_chance: 5,
-  // armor: 0,    //* Future when armor is added
+  armor: 0,
   strength: 5,
   agility: 5,
   intelligence: 5,
@@ -32,8 +32,10 @@ const player = {
     weapon: 1001,
   },
   items: [2001],
-  skills: [],
+  skills: [1],
   status: [],
+  img_src: "url(../../image_data/Placeholderhero.png)",
+  img_size: ["15%", "60%"],
 };
 
 export default player;

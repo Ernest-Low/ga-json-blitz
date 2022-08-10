@@ -6,16 +6,19 @@ const $entity_window = (entity) => {
   const $infobox = character_info(entity);
 
   const $image = $("<div>").attr("id", `${entity.id}image`).css({
-    "background-color": "blue", //  Placeholder
-    width: "5rem", //  Placeholder
-    height: "9rem", //  Placeholder
+    width: "100%",
+    height: "60%",
+    "background-image": entity.img_src,
+    "background-size": "100% 100%",
+    "background-repeat": "no-repeat",
+    "object-fit": "fill",
   });
 
   const $entitybox = $("<div>")
     .attr("id", `${entity.id}box`)
     .css({
-      width: "15%",
-      height: "40%",
+      width: entity.img_size[0],
+      height: entity.img_size[1],
       display: "flex",
       "flex-direction": "column",
       "align-items": "center",

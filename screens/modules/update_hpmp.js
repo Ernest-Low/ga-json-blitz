@@ -1,6 +1,5 @@
 //!  Animate the infobox above character head to new hp/mp values
 const update_hpmp = (entity, hpcost, mpcost) => {
-  console.log("Running updatehpmp");
 
   //  Variable declarations
   const new_hp = entity.health - hpcost;

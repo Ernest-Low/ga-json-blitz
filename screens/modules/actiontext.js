@@ -17,7 +17,6 @@ const $actionText = (inputtext) => {
     let textPosition = 0;
     //  1000ms = 1s, length / (time to render)
     const speed = Math.floor(1000 / (textarray[0].length / 2));
-    console.log(textarray);
     const innertypewriter = () => {
       $("#actiontext").text(textarray[0].substring(0, textPosition));
       if (textPosition++ != textarray[0].length) {

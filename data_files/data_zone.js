@@ -7,7 +7,7 @@ const zones = {
     name: "Forest",
     id: 1,
     level_range: [1, 3],
-    enemy_type: [1, 2],
+    enemy_type: [1, 2, 3],
     enemy_count: 8,
   },
 };

@@ -119,7 +119,7 @@ const character_info = (entity) => {
     .css({
       display: "flex",
       "flex-direction": "column",
-      gap: "0.6rem",
+      gap: "0.33rem",
     })
     .append($hpbarcover, $mpbarcover);
 

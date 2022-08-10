@@ -8,6 +8,8 @@ const current_entities = {
   players: [],
   monsters: [],
   zone: {},
+  currentplayer: "",
+  currentmonster: "",
 };
 
 
