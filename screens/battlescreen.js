@@ -70,10 +70,9 @@ const battleScreen = () => {
     $actionText("Hello World this is a very generic sentence.")
   );
 
-  // Generates the player
+  // Generates the player in the window above
   $battlescene.append($player_window);
 
-  console.log("Loaded Battlescreen");
 };
 
 export default battleScreen;

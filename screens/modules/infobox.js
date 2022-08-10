@@ -1,7 +1,6 @@
 //! Create the infobox above character head in battle screen
 
 const character_info = (entity) => {
-
   //  Name
   const $name = $("<div>")
     .text(entity.name)
@@ -13,11 +12,14 @@ const character_info = (entity) => {
       "font-size": "1rem",
     });
 
+  const player_info = `${entity.name} Lv ${entity.level}`;
+  $name.text(player_info);
+
   //* HP Box
   //  HP Progress Bar
   const $hpbar = $("<div>").attr("id", `${entity.id}hpbar`).css({
     height: "0.5rem",
-    width: "50%",
+    width: "100%",
     "border-radius": "0.5rem",
     "background-color": "rgba(255,0,0,1)",
   });
@@ -36,7 +38,7 @@ const character_info = (entity) => {
   //  HP Value (text)
   const $hpvalue = $("<div>")
     .attr("id", `${entity.id}hpvalue`)
-    .text("50%")
+    .text("")
     .css({
       color: "rgba(255,0,0,1)",
       // width: "5rem",
@@ -74,7 +76,7 @@ const character_info = (entity) => {
   //  MP Progress Bar
   const $mpbar = $("<div>").attr("id", `${entity.id}mpbar`).css({
     height: "0.5rem",
-    width: "50%",
+    width: "100%",
     "border-radius": "0.5rem",
     "background-color": "rgba(0,0,255,1)",
   });
@@ -93,7 +95,7 @@ const character_info = (entity) => {
   //  MP Value (Text)
   const $mpvalue = $("<div>")
     .attr("id", `${entity.id}mpvalue`)
-    .text("50%")
+    .text("")
     .css({
       color: "rgba(0,0,255,1)",
       // width: "5rem",
@@ -147,3 +149,5 @@ const character_info = (entity) => {
 
   return $infobox;
 };
+
+export default character_info;

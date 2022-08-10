@@ -58,7 +58,6 @@ const mainScreen = () => {
   $("#mainscreen").append($textbox);
   $("#maintextbox").append($gamestart);
   $("#maintextbox").append($gamesettings);
-  console.log("Loaded mainscreen?");
 };
 
 export default mainScreen;

@@ -14,11 +14,12 @@
 
 const player = {
   name: "Dissidia",
+  id: "",
   level: 0,
   exp: 0,
   exp_req: 100,
   health: 100,
-  health_max: 5234,
+  health_max: 100,
   mana: 20,
   mana_max: 20,
   crit_chance: 5,
