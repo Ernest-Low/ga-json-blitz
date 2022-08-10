@@ -9,6 +9,7 @@ import update_hpmp from "../modules/update_hpmp.js";
 import $actionText from "../modules/actionText.js";
 import turn_control from "./turn_control";
 import current_entities from "../entities";
+import skills_list from "../../data_files/data_skills.js";
 
 const enemyAttack = {
   reset_critical: function () {
@@ -92,13 +93,30 @@ const enemyAttack = {
   enemy_attack: function (entity, target) {
     this.reset_critical();
     const choice = Math.floor(Math.random() * (entity.skills.length + 1));
+
+    const entity_skills = entity.skills.map((obj) => {
+      return skills_list.filter((skillz) => {
+        return obj == skillz.id;
+      })[0];
+    });
+    console.log(entity_skills);
+
+    console.log(choice);
     let damage = 0;
+    let type = "a basic attack";
     if (choice == entity.skills.length) {
       //  Attack
       damage = this.attack_calculation(entity);
-    } else if (entity.skills[choice].mana_cost <= entity.mana) {
+    } else if (entity_skills[choice].mana_cost <= entity.mana) {
       //  Use a skill, mana check confirmed
-      damage = this.attack_calculation(entity);
+      damage = this.skill_calculation(entity, entity_skills[choice]);
+      console.log("Monster is casting a spell");
+      type = entity_skills[choice].name;
+      update_hpmp(
+        entity,
+        entity_skills[choice].health_cost,
+        entity_skills[choice].mana_cost
+      );
     } else {
       //  Default back to attack
       damage = this.attack_calculation(entity);
@@ -106,7 +124,7 @@ const enemyAttack = {
     damage = this.damage_adjustment(this.critical_check(entity, damage));
     //  Adjustments for armor / defensive buffs
     const final_damage = damage - target.armor;
-    this.damage_target(final_damage, target, "a basic attack", entity);
+    this.damage_target(final_damage, target, type, entity);
   },
 };
 

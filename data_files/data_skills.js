@@ -3,11 +3,13 @@
 //* Multiplier [str/agi/int]
 //* Type: Spells / Skills
 //* Weapon: melee, ranged, magic
+//* Spells can have a health_cost too!
 
-const skills = [
+const skills_list = [
   {
     name: "Power Slash",
     id: 1,
+    health_cost: 0,
     mana_cost: 6,
     cooldown: 0,
     damage: 6,
@@ -22,6 +24,7 @@ const skills = [
   {
     name: "Fireball",
     id: 2,
+    health_cost: 0,
     mana_cost: 7,
     cooldown: 0,
     damage: 6,
@@ -36,6 +39,7 @@ const skills = [
   {
     name: "Power Shot",
     id: 3,
+    health_cost: 0,
     mana_cost: 6,
     cooldown: 0,
     damage: 6,
@@ -48,3 +52,5 @@ const skills = [
     cost: 50,
   },
 ];
+
+export default skills_list;

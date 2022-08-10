@@ -39,8 +39,8 @@ const monsters = [
     scaling: [0.3, 0.2, 0],
     skills: [],
     status: [],
-    img_src: "url(../../image_data/Mystery.png)",
-    img_size: ["15%", "60%"],
+    img_src: "url(../../image_data/Goblin_Grunt.png)",
+    img_size: ["17%", "60%"],
   },
   {
     name: "Orc",
