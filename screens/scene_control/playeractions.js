@@ -1,6 +1,8 @@
 import items from "../../data_files/data_items.js";
 import update_hpmp from "../modules/update_hpmp.js";
-import actionText from "../modules/actionText.js";
+import $actionText from "../modules/actionText.js";
+import current_entities from "../entities.js";
+import turn_control from "./turn_control.js";
 
 //  Weapon Info: Damage: Base Damage, weapon_spill means the diceroll variance. Eg: Weapon Damage 5, spill of 2, means the base damage is 5-2 to 5+2 (3 - 7)
 //  Critical Chance: Base of 5%. Increased by skills / items. (Math.ceil(Math.random()* 100)
@@ -51,15 +53,21 @@ const player_actions = {
   },
 
   damage_target: function (damage, target, type) {
+    current_entities.current_turn = "inbetween";
+    //  Seconds till enemy turn
+    turn_control.player_turn(5);
+
     if (target.health >= damage) {
       update_hpmp(target, damage, 0);
-      actionText(
-        `${this.critical_hit}You dealt ${damage} damage to ${target.name} with ${type}!`
+      $actionText(
+        `${this.critical_hit}You dealt ${damage} damage to ${target.name} with ${type}!`,
+        3
       );
     } else {
       update_hpmp(target, target.health, 0);
-      actionText(
-        `${this.critical_hit}You overkilled ${target.name}, dealing ${damage} damage with ${type}!`
+      $actionText(
+        `${this.critical_hit}You overkilled ${target.name}, dealing ${damage} damage with ${type}!`,
+        3
       );
     }
   },
@@ -75,7 +83,7 @@ const player_actions = {
     //  Target buffs for defense go here in calculations
     const final_damage = damage_total - target.armor;
 
-    this.damage_target(final_damage, target, "a basic attack")
+    this.damage_target(final_damage, target, "a basic attack");
   },
 };
 

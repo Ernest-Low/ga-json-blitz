@@ -5,7 +5,18 @@
 //  * Damage window = (damage - damage_spill) to (damage + damage_spill)
 //  * Critical chance (150% damage) - Base of 3%.
 
+import update_hpmp from "../modules/update_hpmp.js";
+import $actionText from "../modules/actionText.js";
+import turn_control from "./turn_control";
+import current_entities from "../entities";
+
 const enemyAttack = {
+  reset_critical: function () {
+    this.critical_hit = "";
+  },
+
+  critical_hit: "",
+
   attack_calculation: function (entity) {
     let damage_spill_chance = Math.random();
     if (damage_spill_chance > 0.5) {
@@ -51,7 +62,7 @@ const enemyAttack = {
   critical_check: function (entity, damage) {
     //  Increase in future via effects / buffs
     let crit_chance = 3 + entity.crit_chance;
-    if (crit_chance > Math.ceil(Math.random() * 100)) {
+    if (crit_chance >= Math.ceil(Math.random() * 100)) {
       damage = Math.floor(damage * 1.5);
       this.critical_hit = "CRITICAL! ";
       console.log("CRITICAL!");
@@ -60,34 +71,43 @@ const enemyAttack = {
   },
 
   damage_target: function (damage, target, type, entity) {
+    current_entities.current_turn = "pending";
+    turn_control.enemy_turn(5);
+
     if (target.health >= damage) {
       update_hpmp(target, damage, 0);
-      actionText(
-        `${this.critical_hit}You were dealt ${damage} damage from ${entity.name} by ${type}!`
+      $actionText(
+        `${this.critical_hit}You were dealt ${damage} damage from ${entity.name} by ${type}!`,
+        3
       );
     } else {
       update_hpmp(target, target.health, 0);
-      actionText(
-        `${this.critical_hit}You were overkilled by ${entity.name}, taking ${damage} damage from ${type}!`
+      $actionText(
+        `${this.critical_hit}You were overkilled by ${entity.name}, taking ${damage} damage from ${type}!`,
+        3
       );
     }
   },
 
   enemy_attack: function (entity, target) {
+    this.reset_critical();
     const choice = Math.floor(Math.random() * (entity.skills.length + 1));
+    let damage = 0;
     if (choice == entity.skills.length) {
       //  Attack
-      const damage = this.attack_calculation(entity);
+      damage = this.attack_calculation(entity);
     } else if (entity.skills[choice].mana_cost <= entity.mana) {
       //  Use a skill, mana check confirmed
-      const damage = this.attack_calculation(entity);
+      damage = this.attack_calculation(entity);
     } else {
       //  Default back to attack
-      const damage = this.attack_calculation(entity);
+      damage = this.attack_calculation(entity);
     }
-    damage = this.damage_adjustment(critical_check(entity, damage));
+    damage = this.damage_adjustment(this.critical_check(entity, damage));
     //  Adjustments for armor / defensive buffs
     const final_damage = damage - target.armor;
     this.damage_target(final_damage, target, "a basic attack", entity);
   },
 };
+
+export default enemyAttack;

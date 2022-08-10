@@ -24,10 +24,12 @@ const $actions = () => {
     .text("ATTACK")
     .on("click", () => {
       console.log("Attacking");
-      player_actions.player_attack(
-        current_entities.players[current_entities.currentplayer],
-        current_entities.monsters[current_entities.currentmonster]
-      );
+      if (current_entities.current_turn == "player") {
+        player_actions.player_attack(
+          current_entities.players[current_entities.currentplayer],
+          current_entities.monsters[current_entities.currentmonster]
+        );
+      }
     });
 
   //  Open Skills

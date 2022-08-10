@@ -60,8 +60,8 @@ const monsters = [
     scaling: [0.5, 0.1, 0],
     skills: [],
     status: [],
-    img_src: "url(../../image_data/Mystery.png)",
-    img_size: ["15%", "60%"],
+    img_src: "url(../../image_data/Orc.png)",
+    img_size: ["20%", "70%"],
   },
   {
     name: "Twister",

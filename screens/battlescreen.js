@@ -78,7 +78,7 @@ const battleScreen = () => {
 
   //  Showtext (#actiontext)
   const zonetext = `Now entering: ${current_entities.zone.name}`;
-  $longpanel.append(() => $actionText(zonetext));
+  $longpanel.append(() => $actionText(zonetext, 1));
   
 
   // Generates the player in the window above

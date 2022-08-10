@@ -1,6 +1,6 @@
 //  Text control for bottom left box
 
-const $actionText = (inputtext) => {
+const $actionText = (inputtext, time) => {
   let $text = $("<h4>")
     .attr("id", "actiontext")
     .css({
@@ -16,7 +16,7 @@ const $actionText = (inputtext) => {
     textarray.push(text);
     let textPosition = 0;
     //  1000ms = 1s, length / (time to render)
-    const speed = Math.floor(1000 / (textarray[0].length / 2));
+    const speed = Math.floor(1000 / (textarray[0].length / time));
     const innertypewriter = () => {
       $("#actiontext").text(textarray[0].substring(0, textPosition));
       if (textPosition++ != textarray[0].length) {
