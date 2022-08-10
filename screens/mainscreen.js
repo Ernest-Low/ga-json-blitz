@@ -58,8 +58,6 @@ const mainScreen = () => {
   $("#mainscreen").append($textbox);
   $("#maintextbox").append($gamestart);
   $("#maintextbox").append($gamesettings);
-  // $mainscreen.append($("<h1>").text("Hello World").css("color", "white"));
-  // $textbox.append($("<h2>").text("Hello Me").css("color", "white"));
   console.log("Loaded mainscreen?");
 };
 

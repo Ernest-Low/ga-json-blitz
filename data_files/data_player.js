@@ -12,14 +12,13 @@
 
 //* Potential Speed set - Progress bar for who moves (Boot icon?!) - Maybe multiple turns
 
-
 const player = {
-  name: "",
+  name: "Dissidia",
   level: 0,
   exp: 0,
   exp_req: 100,
   health: 100,
-  health_max: 100,
+  health_max: 5234,
   mana: 20,
   mana_max: 20,
   crit_chance: 5,
@@ -28,24 +27,12 @@ const player = {
   agility: 5,
   intelligence: 5,
   gold: 0,
-  equipment: {          // ! Add equipment via js next time (find by itemid)
-    weapon: {     
-      name: "Rusty Sword",
-      itemid: 1001,
-      damage: 5,
-      damage_spill: 2,
-      attributes: [0, 0, 0],
-    },
+  equipment: {
+    weapon: 1001,
   },
-  items: [
-    {
-      name: "Basic Health Potion",
-      itemid: 2001,
-      recovery: 20,
-    },
-  ],
-  skills:[],
-  status:[],
+  items: [2001],
+  skills: [],
+  status: [],
 };
 
 export default player;

@@ -1,16 +1,18 @@
 import $ from "jquery";
 import mainScreen from "./screens/mainscreen.js";
 import battleScreen from "./screens/battlescreen.js";
+import player from "./data_files/data_player.js"
+
+console.log(player);
+
 
 mainScreen(); // Initialize Mainscreen
 $("#btnmainstart").on("click", () => {
   $("#mainscreen").remove();
   console.log("Removed main screen");
   battleScreen();
-  console.log("Battlescreen initialized")
+  console.log("Battlescreen initialized");
 });
-
-
 
 //
 

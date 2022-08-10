@@ -10,9 +10,11 @@
   },
   "devDependencies": {
     "eslint": "^8.21.0",
-    "vite": "^3.0.0"
+    "vite": "^3.0.0",
+    "vite-fs": "^0.0.2"
   },
   "dependencies": {
+    "fs": "^0.0.1-security",
     "jquery": "^3.6.0"
   }
 }

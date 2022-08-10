@@ -1,5 +1,6 @@
 import $actions from "./modules/actions.js";
-import $actionText from "./modules/actiontext.js";
+import $actionText from "./modules/actionText.js";
+import $player_window from "./modules/player.js";
 
 //* Render Battle Screen (Fighting scene)
 const battleScreen = () => {
@@ -23,6 +24,8 @@ const battleScreen = () => {
     "background-repeat": "no-repeat",
     "object-fit": "fill",
     "z-index": 2,
+    display: "inline-flex",
+    "align-items": "center",
   });
 
   //  Bottom Windows
@@ -51,10 +54,10 @@ const battleScreen = () => {
     width: "65%",
     height: "100%",
     "background-image": "url('../image_data/btm_Left_Panel.png')",
-    "background-size": "100% 90%",
+    "background-size": "100% 100%",
     "background-repeat": "no-repeat",
     "object-fit": "fill",
-    padding: "0.8rem 1.3rem 0.8rem 1.3rem",
+    padding: "0 1.3rem 0 1.3rem",
   });
 
   //  Add elements
@@ -62,7 +65,13 @@ const battleScreen = () => {
   $battlescreen.append($battlescene, $battlewindow);
   $battlewindow.append($longpanel, $actionpanel);
   $actionpanel.append($actions);
-  $longpanel.append($actionText);
+  //  Showtext (#actiontext)
+  $longpanel.append(() =>
+    $actionText("Hello World this is a very generic sentence.")
+  );
+
+  // Generates the player
+  $battlescene.append($player_window);
 
   console.log("Loaded Battlescreen");
 };

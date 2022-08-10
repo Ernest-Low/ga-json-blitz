@@ -17,17 +17,42 @@
 //  * Critical chance (Double damage) - Base of 3%. Critical damage = 50% more damage (round down)
 //  * > Critical chance increases by 1% per monster level above the player
 
+
+//  ? Level scaling
+//  * Future addition!? Need to think of a calculation that will determine an enemy's power.
+
 const monsters = [
   {
     name: "Goblin",
+    id: 1,
     level: 1,
     health: 20,
+    health_max: 20,
+    mana: 0,
+    mana_max: 0,
     armor: 0,
     strength: 5,
     agility: 5,
-    intelligence: 5,
+    intelligence: 2,
     damage: 7,
     damage_spill: 3,
+    skills: [],
+    status: [],
+  },
+  {
+    name: "Orc",
+    id: 2,
+    level: 2,
+    health: 30,
+    health_max: 30,
+    mana: 0,
+    mana_max: 0,
+    armor: 1,
+    strength: 7,
+    agility: 4,
+    intelligence: 2,
+    damage: 10,
+    damage_spill: 4,
     skills: [],
     status: [],
   },

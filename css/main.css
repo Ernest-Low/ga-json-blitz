@@ -1,29 +1,46 @@
 /* Specificity : https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity */
 
+:root{
+  --healthpercent: 100%;
+  --new_healthpercent: 100%;
+  --manapercent: 100%;
+  --new_manapercent: 100%;
+}
+
+
 @font-face {
   font-family: Alagard;
-  src: url(./font/alagard.ttf);
+  src: url(../font/alagard.ttf);
+}
+
+.actionbutton:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
 .actionbutton:active {
-  background-color: rgba(255, 255, 255, 0.3) !important;
+  transform: translateY(2px);
 }
 
-#actiontext {
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  letter-spacing: 0.15em; /* Adjust as needed */
-  animation: typing 3.5s steps(40, end);
+.hpanimation{
+  animation: hp-animation 3s;
 }
 
-/* The typing effect */
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
+.mpanimation{
+  animation: mp-animation 3s;
 }
+
+@keyframes hp-animation{
+  from {width: var(--healthpercent)}
+  to {width: var(--new_healthpercent)}
+}
+
+@keyframes mp-animation{
+  from {width: var(--manapercent)}
+  to {width: var(--new_manapercent)}
+}
+
+
+
 
 
 /*

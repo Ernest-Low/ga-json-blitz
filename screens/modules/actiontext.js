@@ -1,19 +1,34 @@
 //  Text control for bottom left box
 
-const $actionText = () => {
-  let inputtext =
-    "Hello World this is a very generic sentence with the goal of trying to add as many words as possible that the text is forced to wrap, letting me test it. The quick brown fox jumps over the lazy dog.";
+const $actionText = (inputtext) => {
 
   let $text = $("<h4>")
     .attr("id", "actiontext")
-    .attr("style", "--n:53")
     .css({
       color: "ghostwhite",
       "font-family": "Alagard",
-      "font-size": "1rem",
+      "font-size": "2rem",
       "word-wrap": "break-word",
     })
-    .text(inputtext);
+    .text("");
+
+  const typewriter = (text) => {
+    const textarray = [];
+    textarray.push(text);
+    let textPosition = 0;
+    //  1000ms = 1s, length / (time to render)
+    const speed = Math.floor(1000 / (textarray[0].length / 2));
+    console.log(textarray);
+    const innertypewriter = () => {
+      $("#actiontext").text(textarray[0].substring(0, textPosition));
+      if (textPosition++ != textarray[0].length) {
+        setTimeout(innertypewriter, speed);
+      }
+    };
+    innertypewriter();
+  };
+
+  typewriter(inputtext);
 
   return $text;
 };
