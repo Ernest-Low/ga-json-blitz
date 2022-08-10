@@ -1,5 +1,23 @@
+import battleScreen from "./battlescreen";
+import current_entities from "./entities";
+import player from "../data_files/data_player.js";
+import zones from "../data_files/data_zone";
+import zone_control from "./scene_control/zone_control.js";
+
 //* Render Mainscreen (Aka main)
 const mainScreen = () => {
+  //  Back blackscreen
+  $("body").append(
+    $("<div>").attr("id", "backblackscreen").css({
+      "z-index": -1,
+      width: "80vw",
+      height: "95vh",
+      border: "4px solid blue",
+      position: "absolute",
+      "background-color": "rgba(0,0,0,1)",
+    })
+  );
+
   //  Mainscreen cover
   const $mainscreen = $("<div>").attr("id", "mainscreen").css({
     display: "flex",
@@ -9,7 +27,7 @@ const mainScreen = () => {
     "background-image": "url('../image_data/Game_Landing_Page.png')",
     "background-size": "100% 100%",
     "background-repeat": "no-repeat",
-    "object-fit" : "fill",
+    "object-fit": "fill",
     width: "80vw",
     height: "95vh",
     border: "4px solid blue",
@@ -39,7 +57,26 @@ const mainScreen = () => {
       height: "25%",
       "font-family": "Alagard",
     })
-    .on("click", () => console.log("Start Clicked"));
+    .on("click", () => {
+      console.log("Start Clicked");
+
+      //!  Call the player, temporary
+      let copiedhero = JSON.parse(JSON.stringify(player));
+      current_entities.players.push(copiedhero);
+      current_entities.players[0].id = "p1";
+      current_entities.players[0].name = "Alphinaud";
+      //! Declared forest as zone (temp)
+      current_entities.zone = JSON.parse(JSON.stringify(zones.forest));
+      zone_control();
+
+      //  Remove mainscreen (Temp), ask for player input for name
+      $("#mainscreen").fadeOut(2000);
+      setTimeout(() => {
+        $("#mainscreen").remove();
+        //  Open battlescreen
+        battleScreen();
+      }, 2000);
+    });
 
   const $gamesettings = $("<button>")
     .attr("id", "btnmainsettings")
@@ -49,8 +86,8 @@ const mainScreen = () => {
       "background-color": "rgba(0,0,0,0.8)",
       "font-size": "1.5rem",
       width: "100%",
-      "height": "25%",
-      "font-family": "Alagard"
+      height: "25%",
+      "font-family": "Alagard",
     })
     .on("click", () => console.log("Settings Clicked"));
 

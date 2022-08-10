@@ -1,6 +1,8 @@
+import current_entities from "./entities.js";
 import $actions from "./modules/actions.js";
 import $actionText from "./modules/actionText.js";
-import $player_window from "./modules/player.js";
+import $entity_window from "./modules/entity.js";
+
 
 //* Render Battle Screen (Fighting scene)
 const battleScreen = () => {
@@ -24,8 +26,10 @@ const battleScreen = () => {
     "background-repeat": "no-repeat",
     "object-fit": "fill",
     "z-index": 2,
-    display: "inline-flex",
+    display: "flex",
     "align-items": "center",
+    "justify-content": "space-evenly",
+    "flex-direction": "row",
   });
 
   //  Bottom Windows
@@ -60,19 +64,24 @@ const battleScreen = () => {
     padding: "0 1.3rem 0 1.3rem",
   });
 
+  const $battlearea = $("<div>").attr("id", "battlearea").css({
+    width: "50%",
+    height: "100%",
+  });
+
   //  Add elements
   $("body").append($battlescreen);
   $battlescreen.append($battlescene, $battlewindow);
   $battlewindow.append($longpanel, $actionpanel);
   $actionpanel.append($actions);
+
   //  Showtext (#actiontext)
-  $longpanel.append(() =>
-    $actionText("Hello World this is a very generic sentence.")
-  );
+  const zonetext = `Now entering: ${current_entities.zone.name}`;
+  $longpanel.append(() => $actionText(zonetext));
+  
 
   // Generates the player in the window above
-  $battlescene.append($player_window);
-
+  $battlescene.append($entity_window(current_entities.players[0]), $battlearea, $entity_window(current_entities.monsters[0]));
 };
 
 export default battleScreen;

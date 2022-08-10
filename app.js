@@ -1,21 +1,7 @@
-import $ from "jquery";
 import mainScreen from "./screens/mainscreen.js";
-import battleScreen from "./screens/battlescreen.js";
-import player from "./data_files/data_player.js";
-import current_entities from "./screens/entities.js";
 
-
-//!  Call the player, temporary
-let copiedhero = JSON.parse(JSON.stringify(player));
-current_entities.players.push(copiedhero);
-current_entities.players[0].id = "p1";
-current_entities.players[0].name = "Alphinaud";
 
 mainScreen(); // Initialize Mainscreen
-$("#btnmainstart").on("click", () => {
-  $("#mainscreen").remove();
-  battleScreen();
-});
 
 //
 

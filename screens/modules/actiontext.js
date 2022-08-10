@@ -1,7 +1,6 @@
 //  Text control for bottom left box
 
 const $actionText = (inputtext) => {
-
   let $text = $("<h4>")
     .attr("id", "actiontext")
     .css({

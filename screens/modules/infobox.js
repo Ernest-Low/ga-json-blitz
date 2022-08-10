@@ -38,7 +38,7 @@ const character_info = (entity) => {
   //  HP Value (text)
   const $hpvalue = $("<div>")
     .attr("id", `${entity.id}hpvalue`)
-    .text("")
+    .text(`${entity.health}/${entity.health_max}`)
     .css({
       color: "rgba(255,0,0,1)",
       // width: "5rem",
@@ -95,7 +95,7 @@ const character_info = (entity) => {
   //  MP Value (Text)
   const $mpvalue = $("<div>")
     .attr("id", `${entity.id}mpvalue`)
-    .text("")
+    .text(`${entity.mana}/${entity.mana_max}`)
     .css({
       color: "rgba(0,0,255,1)",
       // width: "5rem",

@@ -5,7 +5,11 @@
 const zones = {
   forest: {
     name: "Forest",
+    id: 1,
     level_range: [1, 3],
-    enemies: [1, 2],
+    enemy_type: [1, 2],
+    enemy_count: 8,
   },
 };
+
+export default zones
