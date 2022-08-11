@@ -26,7 +26,7 @@ const mainScreen = () => {
     "justify-content": "center",
     "z-index": 1,
     "background-image":
-      "url('../image_data/backgrounds/Game_Landing_Page.png')",
+      "url(image_data/backgrounds/Game_Landing_Page.png)",
     "background-size": "100% 100%",
     "background-repeat": "no-repeat",
     "object-fit": "fill",
@@ -34,6 +34,7 @@ const mainScreen = () => {
     height: "95vh",
     border: "4px solid blue",
     overflow: "hidden",
+    position: "absolute",
   });
 
   // Textholder div center-bottom

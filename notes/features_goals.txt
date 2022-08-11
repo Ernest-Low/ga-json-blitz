@@ -8,7 +8,7 @@ Storyboard
 > Like the 'yada yada brave adventurer / hero please save our kingdom' at start, then a 'muahahaha demon king will rule the world' kinda thing
 
 
-Zones
+(Half)  Zones
 - Do enemy zones dictate what level enemies are in them?
 - Enemy zones are objects with keyvalues?
 - How many enemies for a player to get out of a zone
@@ -23,11 +23,12 @@ Leveling stats screen
     - Back to go back to previous screen
 
 
-Spells / Skills
+(Done)  Spells / Skills
 Scaling off Str, Agi, Int
 - Some increase an attribute for a few turns?
 - Others just deal damage
 - Debuffs / Buffs
+
 
 Shop
 - Plain text in a screen for now (Popup or dedicated screen?)
@@ -41,7 +42,7 @@ Enemy targeting
     - Idea: Click enemy target to target them
 
 
-HP Bars
+(Done)    HP Bars
 - Everyone to have hp bar above their head
 - ? Should enemies have their hp bars listed in a grid too?
     > Probably only when targeting them
@@ -53,9 +54,45 @@ Left of scene / Top of scene - Progress tracker
 - How long till boss of zone
 
 
-Character / Monster Image
+(Done)    Character / Monster Image
 - Might need to add an image-size property to make the div bigger / smaller to not make the enemy so small
 
 
 Restart Game
 - Add a way to full restart the game as needed
+
+
+Game Over (Defeat)
+- Giant skull in middle (you died lol)
+    - Show stat screen of how they did after skull fades away
+- Offer restart
+
+
+Loot Table? (Temp loot table probs)
+> Common loot table of monster level -2 to monster level of itemlevel (monster level 4 will drop level 2 - 4 loot)
+> Rare loot table of monster level -4 to monster level of itemlevel (monster level 7 will drop level 3 - 7 loot)
+    - 3% (For now) per fight for rare items
+    - 10% (For now) per monster for common items?
+
+
+Gold drops (Temp gold calculation)
+> Monster level * 10 +- 10%
+
+
+Character selection screen
+- Input name too
+- Show the 3 main archetypes side by side and tell players to pick
+
+
+Tooltips (more in coding_goals)
+- Items and skills to have tooltips (icon / information)
+- Genereate tooltip based on object!
+
+
+Monster revives / summons  (or player revivals)
+- Add a summoned type to monsters (removed in battle after expire / death)
+- Let variables be made to re-create entity in screen
+
+
+Future Multiplayer
+- Have to seperate player values into an array, out from the hero characters

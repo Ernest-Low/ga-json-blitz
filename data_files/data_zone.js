@@ -11,7 +11,7 @@ const zones = {
     enemy_type: [1, 2, 3, 4],
     enemy_count: 8,
     random_zone: false,
-    img_src: "url('../image_data/backgrounds/Zone_1_Background.png')",
+    img_src: "url(image_data/backgrounds/Zone_1_Background.png)",
   },
   ice_cave: {
     name: "Ice Cave",
@@ -22,7 +22,7 @@ const zones = {
     enemy_count: 8,
     random_zone: true,
     random_count: 9,
-    img_src: "url('../image_data/backgrounds/Ice_Cave_9.png')",
+    img_src: "url(image_data/backgrounds/Ice_Cave_9.png)",
   },
   castle: {
     name: "Castle",

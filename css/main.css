@@ -1,12 +1,11 @@
 /* Specificity : https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity */
 
-:root{
+:root {
   --healthpercent: 100%;
   --new_healthpercent: 100%;
   --manapercent: 100%;
   --new_manapercent: 100%;
 }
-
 
 @font-face {
   font-family: Alagard;
@@ -21,27 +20,61 @@
   transform: translateY(2px);
 }
 
-.hpanimation{
+.hpanimation {
   animation: hp-animation 3s;
 }
 
-.mpanimation{
+.mpanimation {
   animation: mp-animation 3s;
 }
 
-@keyframes hp-animation{
-  from {width: var(--healthpercent)}
-  to {width: var(--new_healthpercent)}
+@keyframes hp-animation {
+  from {
+    width: var(--healthpercent);
+  }
+  to {
+    width: var(--new_healthpercent);
+  }
 }
 
-@keyframes mp-animation{
-  from {width: var(--manapercent)}
-  to {width: var(--new_manapercent)}
+@keyframes mp-animation {
+  from {
+    width: var(--manapercent);
+  }
+  to {
+    width: var(--new_manapercent);
+  }
 }
 
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px solid black;
+}
 
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: ghostwhite;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
 
+  /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
+  opacity: 0;
+  transition: opacity 1s;
+}
 
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
 
 /*
 

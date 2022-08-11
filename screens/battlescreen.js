@@ -14,6 +14,7 @@ const battleScreen = () => {
     height: "95vh",
     border: "4px solid blue",
     overflow: "hidden",
+    position: "absolute",
   });
 
   //  Top scene
@@ -35,7 +36,7 @@ const battleScreen = () => {
     let random_zone = Math.ceil(
       Math.random() * current_entities.zone.random_count
     );
-    random_zone = `url('../image_data/backgrounds/${current_entities.zone.name2}/${current_entities.zone.img_src}${random_zone}.png')`;
+    random_zone = `url(/image_data/backgrounds/${current_entities.zone.name2}/${current_entities.zone.img_src}${random_zone}.png)`;
     $battlescene.css({
       "background-image": random_zone,
     });
@@ -56,7 +57,7 @@ const battleScreen = () => {
   const $actionpanel = $("<div>").attr("id", "actionpanel").css({
     width: "35%",
     height: "100%",
-    "background-image": "url('../image_data/modules/btm_Right_4panel.png')",
+    "background-image": "url(image_data/modules/btm_Right_4panel.png)",
     "background-size": "100% 100%",
     "background-repeat": "no-repeat",
     "object-fit": "fill",
@@ -66,7 +67,7 @@ const battleScreen = () => {
   const $longpanel = $("<div>").attr("id", "longpanel").css({
     width: "65%",
     height: "100%",
-    "background-image": "url('../image_data/modules/btm_Left_Panel.png')",
+    "background-image": "url(image_data/modules/btm_Left_Panel.png)",
     "background-size": "100% 100%",
     "background-repeat": "no-repeat",
     "object-fit": "fill",
@@ -108,7 +109,7 @@ const battleScreen = () => {
     $battlearea,
     $entity_window(current_entities.monsters[0])
   );
-  $("#blackscreen").css({ "z-index": 3 });
+  $("#blackscreen").css({ "z-index": 5 });
   $("#blackscreen").fadeOut(2000);
   setTimeout(() => {
     $("#blackscreen").css({ "z-index": -1 });

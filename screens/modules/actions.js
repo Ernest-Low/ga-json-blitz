@@ -60,8 +60,8 @@ const $actions = () => {
     .text("RUN")
     .on("click", () => {
       console.log("Running");
-      console.log("Dev code: Strength set to 200");
-      current_entities.players[current_entities.currentplayer].strength = 200;
+      console.log("Dev code: Adding 300 Strength");
+      current_entities.players[current_entities.currentplayer].strength += 300;
     });
 
   //  Attack / Skills holding box

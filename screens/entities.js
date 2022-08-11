@@ -6,14 +6,14 @@
 
 const current_entities = {
   players: [],
+  gold: 0,
+  items: [2001],
   monsters: [],
   zone: {},
   currentplayer: "",
   currentmonster: "",
   current_turn: "player",
   fight_status: "",
-
 };
-
 
 export default current_entities;

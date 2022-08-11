@@ -27,15 +27,14 @@ const player = {
   strength: 5,
   agility: 5,
   intelligence: 5,
-  gold: 0,
   equipment: {
     weapon: 1001,
   },
-  items: [2001],
   skills: [1],
   status: [],
-  img_src: "url(../../image_data/players/Arms_Warrior.png)",
+  img_src: "url(image_data/players/Arms_Warrior.png)",
   img_size: ["10%", "35%"],
 };
 
 export default player;
+

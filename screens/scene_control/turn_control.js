@@ -23,7 +23,7 @@ const turn_control = {
       console.log("DEFEAT!");
       current_entities.current_turn = "ended";
       current_entities.fight_status = "DEFEAT!";
-      afterBattle();
+      afterBattle.defeat();
       $("#battlescreen").fadeOut(1000);
       setTimeout(() => {
         $("#battlescreen").remove();
@@ -42,7 +42,7 @@ const turn_control = {
       console.log("VICTORY!");
       current_entities.current_turn = "ended";
       current_entities.fight_status = "VICTORY!";
-      afterBattle();
+      afterBattle.zone_clear_check();
       $("#battlescreen").fadeOut(1000);
       setTimeout(() => {
         $("#battlescreen").remove();
