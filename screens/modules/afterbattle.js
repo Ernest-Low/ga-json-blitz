@@ -6,7 +6,8 @@
 
 import current_entities from "../entities.js";
 import items from "../../data_files/data_items.js";
-import { css } from "jquery";
+import iteminfo from "./iteminfo.js";
+import create_battle from "./create_battle.js";
 
 const afterBattle = {
   //  Check if zone is completed
@@ -36,7 +37,7 @@ const afterBattle = {
       total_level += monster.level;
     });
     const randneg = Math.random() < 0.5 ? -1 : 1;
-    let gold_drop = math.floor(
+    let gold_drop = Math.floor(
       total_level * 10 * (1 + (randneg * (Math.random() * 10)) / 100)
     );
     gold_drop = gold_drop + 10 + Math.ceil(Math.random() * 10);
@@ -57,19 +58,20 @@ const afterBattle = {
       const items_list = items.filter((obj) => {
         if (
           obj.rarity == "Common" &&
-          drop_level >= lower_cap &&
-          drop_level <= monster.level
+          obj.drop_level >= lower_cap &&
+          obj.drop_level <= monster.level
         ) {
           return obj;
         }
       });
+      console.log(`items_list: ${items_list}`);
       const chance = Math.ceil(Math.random() * 100);
       if (chance > 90) {
         const item = items_list[Math.floor(Math.random() * items_list.length)];
         return_items.push(item);
       }
     });
-
+    console.log(return_items);
     return return_items;
   },
 
@@ -83,10 +85,19 @@ const afterBattle = {
     return final_exp;
   },
 
-  //  Return hero max xp required to next level
-  hero_experience: function (hero) {
-    const expreq = 15 * Math.pow(hero.level, 2) + 85 * hero.level;
-    return expreq;
+  //  Hero level up, tweak this
+  hero_level: function (hero) {
+    hero.level += 1;
+    hero.strength += 1;
+    hero.agility += 1;
+    hero.intelligence += 1;
+    hero.health_max += 10;
+    hero.mana_max += 2;
+    //  Calculate new exp required
+    hero.exp_req = 15 * Math.pow(hero.level, 2) + 85 * hero.level;
+    console.log(
+      `$Hero now level: ${hero.level}, requires ${hero.exp_req} exp to level up.`
+    );
   },
 
   afterScreen: function (status) {
@@ -94,12 +105,11 @@ const afterBattle = {
     const $afterscreen = $("<div>").attr("id", "afterscreen").css({
       display: "flex",
       position: "absolute",
-      "justify-content": "space-around",
+      // "justify-content": "space-around",
       "flex-direction": "column",
       "align-items": "center",
       "z-index": 0,
-      "background-image":
-        "url('../image_data/backgrounds/castle/ruined_castle.png')",
+      "background-image": "url(image_data/modules/Results/victory2.png)",
       "background-size": "100% 100%",
       "background-repeat": "no-repeat",
       "object-fit": "fill",
@@ -111,24 +121,28 @@ const afterBattle = {
 
     //  Show victory / defeat in title
     const $aftertop = $("<div>").attr("id", "aftertop").css({
-      height: "25%",
+      width: "100%",
+      height: "40%",
     });
-    const $title = $("<h1>")
-      .attr("id", "aftertitle")
-      .css({
-        color: "ghostwhite",
-        "font-family": "Alagard",
-        "font-size": "4rem",
-      })
-      .text(status);
+    //* Title (Not really in use)
+    const $title = $("<h1>").attr("id", "aftertitle").css({
+      color: "ghostwhite",
+      "font-family": "Alagard",
+      "font-size": "4rem",
+    });
+    // .text(status);
     $aftertop.append($title);
 
+    //  Middle div (contains gold/loot/exp)
     const $aftermiddle = $("<div>").attr("id", "aftermiddle").css({
       display: "flex",
       "flex-direction": "row",
-      width: "90%",
-      height: "30%",
+      "justify-content": "center",
+      width: "100%",
+      height: "45%",
     });
+
+    //  Gold div
     const $golddrop = $("<div>").css({
       width: "33%",
       height: "100%",
@@ -137,7 +151,11 @@ const afterBattle = {
       "jusify-content": "center",
       "align-items": "center",
     });
+
+    //  Item div
     const $itemdrop = $("<div>");
+
+    //  Exp div
     const $expgain = $("<div>)").css({
       width: "33%",
       height: "100%",
@@ -145,25 +163,36 @@ const afterBattle = {
       "jusify-content": "center",
       "align-items": "center",
     });
-    const $afterbottom = $("<div>").attr("id", "afterbottom");
+
+    //  Bottom div for buttons
+    const $afterbottom = $("<div>").attr("id", "afterbottom").css({
+      display: "flex",
+      "align-items": "center",
+      "justify-content": "space-around",
+      width: "90%",
+      height: "8rem",
+    });
 
     //  Add gold
-    const gold_gained = this.gold_drop;
+    const gold_gained = this.gold_drop();
     current_entities.gold += gold_gained;
     //  Gold Text
+    const golden_text = `Gold: + ${gold_gained}`;
     const $goldtext = $("<h2>")
       .css({
         color: "ghostwhite",
         "font-family": "Alagard",
-        "font-size": "2rem",
+        "font-size": "3rem",
         "word-wrap": "break-word",
         "text-align": "center",
       })
-      .text(`Gold: +${gold_gained}`);
+      .text(golden_text);
+
+    //  Money picture
     const $goldpic = $("<div>").css({
-      width: "100%",
-      height: "auto",
-      "background-image": "../../image_data/icons/currency/currency_coin.png",
+      width: "25%",
+      height: "30%",
+      "background-image": "url(image_data/icons/currency/currency_coin.png)",
       "background-size": "100% 100%",
       "background-repeat": "no-repeat",
       "object-fit": "contain",
@@ -173,7 +202,14 @@ const afterBattle = {
     const items_gained = [];
     items_gained.push(...this.drop_item(current_entities.monsters));
     //* Check if any items
-    if (items_gained == []) {
+    if (items_gained.length >= 1) {
+      console.log("Adding items");
+
+      //  Add item ids to inventory
+      items_gained.forEach((obj) => {
+        current_entities.items.push(obj.id);
+      });
+
       $itemdrop.css({
         width: "33%",
         height: "100%",
@@ -187,45 +223,190 @@ const afterBattle = {
         .css({
           color: "ghostwhite",
           "font-family": "Alagard",
-          "font-size": "2rem",
+          "font-size": "3rem",
           "word-wrap": "break-word",
           "text-align": "center",
         })
         .text(`Items Found!`);
 
+      //  List of items
       const $itemslist = $("<div>").css({
         width: "100%",
         height: "auto",
+        "justify-content": "center",
+        "text-align": "center",
       });
+
       items_gained.forEach((obj) => {
-        $itemslist.append(
-          $("<p>").addClass("tooltip")
-            .attr("id", `itemid${obj.id}`)
-            .css({
-              color: "ghostwhite",
-              "font-family": "Alagard",
-              "font-size": "1rem",
-              "word-wrap": "break-word",
-              "text-align": "center",
-            })
-            .text(`${obj.name}`).append($("<span>").addClass("tooltiptext")
-            .text(``)
-            
-            
-            
-            )
-
-
-
-        );
+        $itemslist.append(iteminfo.item_link(obj));
       });
+
+      $itemdrop.append($itemtext, $itemslist);
     }
 
-    //  Generate gold / loot
-    //  Clean up monsters
+    //* Exp function to change when multiple heroes get involved
+    let total_exp = 0;
+    //  Get EXP
+    current_entities.monsters.forEach((obj) => {
+      total_exp += this.generate_experience(obj);
+    });
+
+    //  Pull any old exp to calculate
+    let levelup = false;
+    let new_exp =
+      total_exp + current_entities.players[current_entities.currentplayer].exp;
+    while (
+      new_exp > current_entities.players[current_entities.currentplayer].exp_req
+    ) {
+      levelup = true;
+      new_exp -=
+        current_entities.players[current_entities.currentplayer].exp_req;
+      this.hero_level(current_entities.players[current_entities.currentplayer]);
+    }
+    current_entities.players[current_entities.currentplayer].exp = new_exp;
+
+    const $exptext = $("<h2>")
+      .css({
+        color: "ghostwhite",
+        "font-family": "Alagard",
+        "font-size": "3rem",
+        "word-wrap": "break-word",
+        "text-align": "center",
+      })
+      .text(`+ ${total_exp} exp`);
+
+    $expgain.append($exptext);
+    if (levelup) {
+      $expgain.append(
+        $("<h2>")
+          .css({
+            color: "ghostwhite",
+            "font-family": "Alagard",
+            "font-size": "3rem",
+            "word-wrap": "break-word",
+            "text-align": "center",
+          })
+          .text(`Leveled up!`)
+      );
+    }
+
     //  Regenerate hero
+    current_entities.monsters = [];
+    current_entities.players.forEach((obj) => {
+      obj.health = Math.ceil(obj.health * 1.15);
+      if (obj.health > obj.health_max) {
+        obj.health = obj.health_max;
+      }
+      obj.mana = Math.ceil(obj.mana * 1.15);
+      if (obj.mana > obj.mana_max) {
+        obj.mana = obj.mana_max;
+      }
+    });
+
+    //* Shop Button
+    //* Inventory Button
+
+    const $nextmatch = $("<div>")
+      .css({
+        flex: "none",
+        width: "25%",
+        height: "50%",
+        "background-image":
+          "url(image_data/modules/Buttons/greenrectangle.png)",
+        "background-size": "100% 100%",
+        "background-repeat": "no-repeat",
+        "object-fit": "contain",
+      })
+      .append(
+        $("<button>")
+          .attr("id", "btnnextmatch")
+          .css({
+            width: "100%",
+            height: "100%",
+            color: "ghostwhite",
+            "background-color": "rgba(255,255,255,0)",
+            "font-size": "1.5rem",
+            "text-align": "center",
+            border: "none",
+            "font-family": "Alagard",
+          })
+          .text("ONWARD!")
+          .on("click", () => {
+            console.log("btnnextmatch clicked");
+            $afterscreen.css({
+              "z-index": 2,
+            });
+            $afterscreen.fadeOut(2000);
+            setTimeout(() => {
+              create_battle();
+              $afterscreen.remove();
+            }, 2000);
+          })
+      );
+
+    const $shop = $("<div>")
+      .css({
+        flex: "none",
+        width: "25%",
+        height: "50%",
+        "background-image":
+          "url(image_data/modules/Buttons/greenrectangle.png)",
+        "background-size": "100% 100%",
+        "background-repeat": "no-repeat",
+        "object-fit": "contain",
+      })
+      .append(
+        $("<button>")
+          .attr("id", "btnshop")
+          .css({
+            width: "100%",
+            height: "100%",
+            color: "ghostwhite",
+            "background-color": "rgba(255,255,255,0)",
+            "font-size": "1.5rem",
+            "text-align": "center",
+            border: "none",
+            "font-family": "Alagard",
+          })
+          .text("Shop")
+          .on("click", () => {
+            console.log("btnshop clicked");
+          })
+      );
+
+    const $inventory = $("<div>")
+      .css({
+        flex: "none",
+        width: "25%",
+        height: "50%",
+        "background-image":
+          "url(image_data/modules/Buttons/greenrectangle.png)",
+        "background-size": "100% 100%",
+        "background-repeat": "no-repeat",
+        "object-fit": "contain",
+      })
+      .append(
+        $("<button>")
+          .attr("id", "btninventory")
+          .css({
+            width: "100%",
+            height: "100%",
+            color: "ghostwhite",
+            "background-color": "rgba(255,255,255,0)",
+            "font-size": "1.5rem",
+            "text-align": "center",
+            border: "none",
+            "font-family": "Alagard",
+          })
+          .text("Inventory")
+          .on("click", () => {
+            console.log("btninventory clicked");
+          })
+      );
 
     $golddrop.append($goldtext, $goldpic);
+    $afterbottom.append($inventory, $nextmatch, $shop);
+
     $aftermiddle.append($golddrop, $itemdrop, $expgain);
     $("body").append($afterscreen);
     $afterscreen.append($aftertop, $aftermiddle, $afterbottom);

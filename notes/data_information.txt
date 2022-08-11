@@ -1,0 +1,84 @@
+
+
+Skills
+Usual skill types currently: Do damage, buff stats (temp / for remainder of fight), recover hp, do critical damage on next skill / attack.
+Multiplier [str/agi/int]
+Type: Spells / Skills
+Weapon: melee, ranged, magic
+Spells can have a health_cost too!
+
+
+
+
+Monsters
+
+Player exp calculation - Up to level 10?
+Player Level         : 1    2    3    4    5    6     7     8     9     10
+Player Levels EXP req: 100  230  390  580  800  1050  1330  1640  1980  2350
+15n^2 + 85n
+
+Monster Exp Calculation
+Monsters lvl from 1 - 15
+Exp per monster: Monster level * 10 * (4 to 6) + (20 to 40)
+Monster level:     1          2           3           4           5           6           7           8           9           10
+Monster exp:   100 - 118  139 - 172   184 - 232   235 - 298   292 - 370   355 - 448   424 - 532   499 - 622   580 - 718   667 - 820
+3n^2 + 30n + 67 to  3n^2 + 45n + 70
+
+Monster Damage Calculation
+Damage window = (damage - damage_spill) to (damage + damage_spill)
+Critical chance (150% damage) - Base of 3%.
+> Critical chance increases by 1% per monster level above the player
+
+Level scaling
+Future addition!? Need to think of a calculation that will determine an enemy's power.
+
+
+Items
+
+Misc Item IDs: 1 - 1000
+Weapon Item IDs: 1001 - 2000
+Armor Item IDs: 2001 - 3000         (Extra)
+Accessories Item IDs: 3001 - 4000   (Extra)
+Consumables:    4001 - 5000
+
+Potential Speed set - Progress bar for who moves (Boot icon?!) - Maybe multiple turns
+
+Weapons
+Weapon Info: Damage: Base Damage, weapon_spill means the diceroll variance. Eg: Weapon Damage 5, spill of 2, means the base damage is 5-2 to 5+2 (3 - 7)
+Critical Chance: Base of 5%. Increased by skills / items. (Math.ceil(Math.random()* 100)
+Critical hits do 150% damage (maybe increase in future via effects) - Round down to integer
+
+Attributes = [str,agi,int,hp,mp]
+Type: melee, ranged, magic
+Melee higher base damage
+Ranged higher damage spill, higher scaling
+Magic no damage (for now?), adds more int / mana
+
+Item Drop table
+Currently 2 item types only: common / uncommon
+Common loot table of monster level -2 to monster level of itemlevel (monster level 4 will drop level 2 - 4 loot)
+Rare loot table of monster level -4 to monster level of itemlevel (monster level 7 will drop level 3 - 7 loot)
+    - 3% (For now) per fight for rare items
+    - 10% (For now) per monster for common items?
+
+
+
+
+
+Buffs / Debuffs as extra
+
+Icons:
+(fist) : Attribute buff
+(Skull) : Debuffs (curse)
+(blood drop(s)): Taking damage per turn
+(swirly) : Stunned
+(Sword) : Attack buff (short duration / single use)
+(Shield) : Defense Buff (short duration / single use)
+(boot with wings) : Speed stat affected
+
+Icons flush to the left (to be cleaner)
+Per start of player turn, remove 1 duration from each of player buffs / debuffs
+Per end of player turn, proc each debuff / damage proc
+
+If stunned, they can still pick their action, but if it's not an item, it won't work.
+Silence debuff makes them unable to use spells (under curse)

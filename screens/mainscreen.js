@@ -1,9 +1,7 @@
-import battleScreen from "./battlescreen";
 import current_entities from "./entities";
 import player from "../data_files/data_player.js";
 import zones from "../data_files/data_zone";
-import zone_control from "./scene_control/zone_control.js";
-import current_fight from "./current_fight";
+import create_battle from "./modules/create_battle";
 
 //* Render Mainscreen (Aka main)
 const mainScreen = () => {
@@ -25,8 +23,7 @@ const mainScreen = () => {
     "align-items": "flex-end",
     "justify-content": "center",
     "z-index": 1,
-    "background-image":
-      "url(image_data/backgrounds/Game_Landing_Page.png)",
+    "background-image": "url(image_data/backgrounds/Game_Landing_Page.png)",
     "background-size": "100% 100%",
     "background-repeat": "no-repeat",
     "object-fit": "fill",
@@ -71,15 +68,10 @@ const mainScreen = () => {
       //! Declaring castle zone (temp)
       current_entities.zone = JSON.parse(JSON.stringify(zones.castle));
 
-      zone_control();
-      current_fight();
-
-      //  Remove mainscreen (Temp), ask for player input for name
       $("#mainscreen").fadeOut(2000);
       setTimeout(() => {
+        create_battle();
         $("#mainscreen").remove();
-        //  Open battlescreen
-        battleScreen();
       }, 2000);
     });
 
