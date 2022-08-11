@@ -35,7 +35,7 @@ const player = {
   skills: [1],
   status: [],
   img_src: "url(../../image_data/players/Arms_Warrior.png)",
-  img_size: ["20%", "70%"],
+  img_size: ["10%", "35%"],
 };
 
 export default player;

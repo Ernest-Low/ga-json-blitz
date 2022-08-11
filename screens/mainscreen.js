@@ -25,7 +25,8 @@ const mainScreen = () => {
     "align-items": "flex-end",
     "justify-content": "center",
     "z-index": 1,
-    "background-image": "url('../image_data/backgrounds/Game_Landing_Page.png')",
+    "background-image":
+      "url('../image_data/backgrounds/Game_Landing_Page.png')",
     "background-size": "100% 100%",
     "background-repeat": "no-repeat",
     "object-fit": "fill",
@@ -66,11 +67,11 @@ const mainScreen = () => {
       current_entities.players.push(copiedhero);
       current_entities.players[0].id = "p1";
       current_entities.players[0].name = "Alphinaud";
-      //! Declared forest as zone (temp)
-      current_entities.zone = JSON.parse(JSON.stringify(zones.forest));
+      //! Declaring castle zone (temp)
+      current_entities.zone = JSON.parse(JSON.stringify(zones.castle));
+      
       zone_control();
       current_fight();
-
 
       //  Remove mainscreen (Temp), ask for player input for name
       $("#mainscreen").fadeOut(2000);

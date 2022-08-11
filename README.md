@@ -217,3 +217,14 @@ GIFS
 
 Targeting System:
 - Idea: Click enemy target to target them
+
+setTimeout !~! Bad , change to global clock.
+- Keeps counting even if the window is out of focus (nothing happens), which may cause events to happen ahead of time.
+> Potentially change it such that it will keep recalling itself, decreasing a 'timer' variable, which is used to get events running instead.
+! Confirmed, global clock needed. Will need to remove all setTimeout in favor of a single ticking clock to count
+> Eg: At time of check, check what count is the clock. Set to work when the clock is at/above a count of ticks.
+
+
+
+Left of scene / Top of scene - Progress tracker
+- How long till boss of zone

@@ -40,7 +40,7 @@ const monsters = [
     skills: [],
     status: [],
     img_src: "url(../../image_data/monsters/Goblin_Grunt.png)",
-    img_size: ["17%", "60%"],
+    img_size: ["8.5%", "30%"],
   },
   {
     name: "Orc",
@@ -61,7 +61,7 @@ const monsters = [
     skills: [],
     status: [],
     img_src: "url(../../image_data/monsters/Orc.png)",
-    img_size: ["20%", "70%"],
+    img_size: ["10%", "40%"],
   },
   {
     name: "Twister",
@@ -82,7 +82,7 @@ const monsters = [
     skills: [],
     status: [],
     img_src: "url(../../image_data/monsters/Twister.png)",
-    img_size: ["15%", "60%"],
+    img_size: ["7.5%", "30%"],
   },
   {
     name: "Goblin Mage",
@@ -103,7 +103,7 @@ const monsters = [
     skills: [2],
     status: [],
     img_src: "url(../../image_data/monsters/Mystery.png)",
-    img_size: ["15%", "60%"],
+    img_size: ["7.5%", "30%"],
   },
 ];
 

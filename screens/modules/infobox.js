@@ -10,6 +10,7 @@ const character_info = (entity) => {
       color: "ghostwhite",
       "font-family": "Alagard",
       "font-size": "1rem",
+      "white-space": "nowrap",
     });
 
   const player_info = `${entity.name} Lv ${entity.level}`;

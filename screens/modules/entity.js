@@ -21,8 +21,9 @@ const $entity_window = (entity) => {
       height: entity.img_size[1],
       display: "flex",
       "flex-direction": "column",
-      "align-items": "center",
-      padding: "3rem",
+      "align-items": "flex-end",
+      "justify-content": "flex-end",
+      padding: "1rem",
     })
     .append($infobox, $image);
 
