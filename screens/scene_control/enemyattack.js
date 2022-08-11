@@ -66,7 +66,7 @@ const enemyAttack = {
     if (crit_chance >= Math.ceil(Math.random() * 100)) {
       damage = Math.floor(damage * 1.5);
       this.critical_hit = "CRITICAL! ";
-      console.log("CRITICAL!");
+      // console.log("CRITICAL!");
     }
     return damage;
   },
@@ -99,9 +99,9 @@ const enemyAttack = {
         return obj == skillz.id;
       })[0];
     });
-    console.log(entity_skills);
+    // console.log(entity_skills);
 
-    console.log(choice);
+    // console.log(choice);
     let damage = 0;
     let type = "a basic attack";
     if (choice == entity.skills.length) {
@@ -110,7 +110,7 @@ const enemyAttack = {
     } else if (entity_skills[choice].mana_cost <= entity.mana) {
       //  Use a skill, mana check confirmed
       damage = this.skill_calculation(entity, entity_skills[choice]);
-      console.log("Monster is casting a spell");
+      // console.log("Monster is casting a spell");
       type = entity_skills[choice].name;
       update_hpmp(
         entity,

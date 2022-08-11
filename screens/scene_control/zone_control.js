@@ -1,3 +1,7 @@
+//! Zone control looks at monster and adds a monster into the current enemies
+//? Potential for more targets / varying enemies next time (via constructors, given params by zones)
+
+
 import current_entities from "../entities";
 import monsters from "../../data_files/data_monster";
 

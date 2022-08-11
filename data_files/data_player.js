@@ -34,7 +34,7 @@ const player = {
   items: [2001],
   skills: [1],
   status: [],
-  img_src: "url(../../image_data/Arms_Warrior.png)",
+  img_src: "url(../../image_data/players/Arms_Warrior.png)",
   img_size: ["20%", "70%"],
 };
 

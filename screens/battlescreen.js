@@ -21,7 +21,7 @@ const battleScreen = () => {
   const $battlescene = $("<div>").attr("id", "battlescene").css({
     width: "100%",
     height: "75%",
-    "background-image": "url('../image_data/Zone_1_Background.png')",
+    "background-image": current_entities.zone.img_src,
     "background-size": "100% 100%",
     "background-repeat": "no-repeat",
     "object-fit": "fill",
@@ -47,7 +47,7 @@ const battleScreen = () => {
   const $actionpanel = $("<div>").attr("id", "actionpanel").css({
     width: "35%",
     height: "100%",
-    "background-image": "url('../image_data/btm_Right_4panel.png')",
+    "background-image": "url('../image_data/modules/btm_Right_4panel.png')",
     "background-size": "100% 100%",
     "background-repeat": "no-repeat",
     "object-fit": "fill",
@@ -57,12 +57,24 @@ const battleScreen = () => {
   const $longpanel = $("<div>").attr("id", "longpanel").css({
     width: "65%",
     height: "100%",
-    "background-image": "url('../image_data/btm_Left_Panel.png')",
+    "background-image": "url('../image_data/modules/btm_Left_Panel.png')",
     "background-size": "100% 100%",
     "background-repeat": "no-repeat",
     "object-fit": "fill",
     padding: "0 1.3rem 0 1.3rem",
   });
+
+  //  Bottom Left Panel (textbox)
+  const $textpanel = $("<h4>")
+  .attr("id", "actiontext")
+  .css({
+    color: "ghostwhite",
+    "font-family": "Alagard",
+    "font-size": "2rem",
+    "word-wrap": "break-word",
+  })
+  .text("");
+
 
   //  Inbetween the player and enemy
   const $battlearea = $("<div>").attr("id", "battlearea").css({
@@ -78,10 +90,11 @@ const battleScreen = () => {
 
   //  Showtext (#actiontext)
   const zonetext = `Now entering: ${current_entities.zone.name}`;
-  $longpanel.append(() => $actionText(zonetext, 1));
-  
+  $longpanel.append($textpanel);
+  $actionText(zonetext, 1)
 
   // Generates the player in the window above
+  //* Variance in future for more entities.
   $battlescene.append($entity_window(current_entities.players[0]), $battlearea, $entity_window(current_entities.monsters[0]));
   
 };

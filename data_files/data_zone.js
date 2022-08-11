@@ -9,7 +9,12 @@ const zones = {
     level_range: [1, 3],
     enemy_type: [1, 2, 3, 4],
     enemy_count: 8,
+    img_src: "url('../image_data/backgrounds/Zone_1_Background.png')",
   },
+  
+
+
+
 };
 
 export default zones

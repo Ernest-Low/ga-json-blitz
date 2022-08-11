@@ -1,3 +1,6 @@
+//! Reset current targets
+//? Use to set enemy targets in future?
+
 import current_entities from "./entities";
 
 const current_fight = () => {

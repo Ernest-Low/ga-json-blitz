@@ -47,7 +47,7 @@ const player_actions = {
     if (crit_chance > Math.ceil(Math.random() * 100)) {
       damage = Math.floor(damage * 1.5);
       this.critical_hit = "CRITICAL! ";
-      console.log("CRITICAL!");
+      // console.log("CRITICAL!");
     }
     return damage;
   },

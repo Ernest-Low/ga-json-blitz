@@ -8,15 +8,64 @@ import enemyAttack from "./enemyattack";
 import $actionText from "../modules/actionText.js";
 
 const turn_control = {
+  //  Linked to checking all dead enemies, checks if there are no remaining entities
+  battle_over: function () {
+    //  Defeat (all players dead)
+    if (
+      current_entities.players.every((obj) => {
+        if (obj.health == 0) {
+          return true;
+        }
+        return false;
+      })
+    ) {
+      console.log("DEFEAT!");
+      current_entities.current_turn = "ended";
+    }
+
+    //  Victory (all monsters dead)
+    if (
+      current_entities.monsters.every((obj) => {
+        if (obj.health == 0) {
+          return true;
+        }
+        return false;
+      })
+    ) {
+      console.log("VICTORY!");
+      current_entities.current_turn = "ended";
+    }
+  },
+
+  //  Call this before giving the next turn to check dead enemies (and giving time to animate)
+  //  Try not to delete enemies, might push into another array of defeated entities, gives opportunity for revival inbattle
+  dead_entity_check: function () {
+    current_entities.players.forEach((obj) => {
+      if (obj.health <= 0) {
+        // Deleting the player on screen... temporary
+        $(`${obj.id}box`).remove();
+      }
+    });
+    current_entities.monsters.forEach((obj) => {
+      if (obj.health <= 0) {
+        $(`${obj.id}box`).remove();
+      }
+    });
+    this.battle_over();
+  },
+
   //  Player turn over, pending monster turn
   player_turn: function (time) {
     console.log("Player turn over, pending monster turn");
     setTimeout(() => {
-      current_entities.current_turn = "monster";
-      enemyAttack.enemy_attack(
-        current_entities.monsters[current_entities.currentmonster],
-        current_entities.players[current_entities.currentplayer]
-      );
+      this.dead_entity_check();
+      if (current_entities.current_turn !== "ended") {
+        current_entities.current_turn = "monster";
+        enemyAttack.enemy_attack(
+          current_entities.monsters[current_entities.currentmonster],
+          current_entities.players[current_entities.currentplayer]
+        );
+      }
     }, time * 1000);
   },
 
@@ -24,8 +73,11 @@ const turn_control = {
   enemy_turn: function (time) {
     console.log("Monster turn over, pending player turn");
     setTimeout(() => {
-      current_entities.current_turn = "player";
-      $actionText("It's your turn now!", 0.3);
+      this.dead_entity_check();
+      if (current_entities.current_turn !== "ended") {
+        current_entities.current_turn = "player";
+        $actionText("It's your turn now!", 0.3);
+      }
     }, time * 1000);
   },
 };

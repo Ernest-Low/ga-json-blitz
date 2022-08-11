@@ -39,13 +39,13 @@ const monsters = [
     scaling: [0.3, 0.2, 0],
     skills: [],
     status: [],
-    img_src: "url(../../image_data/Goblin_Grunt.png)",
+    img_src: "url(../../image_data/monsters/Goblin_Grunt.png)",
     img_size: ["17%", "60%"],
   },
   {
     name: "Orc",
     id: 2,
-    level: 2,
+    level: 3,
     health: 45,
     health_max: 45,
     mana: 0,
@@ -60,7 +60,7 @@ const monsters = [
     scaling: [0.5, 0.1, 0],
     skills: [],
     status: [],
-    img_src: "url(../../image_data/Orc.png)",
+    img_src: "url(../../image_data/monsters/Orc.png)",
     img_size: ["20%", "70%"],
   },
   {
@@ -81,7 +81,7 @@ const monsters = [
     scaling: [0.2, 0.4, 0],
     skills: [],
     status: [],
-    img_src: "url(../../image_data/Twister.png)",
+    img_src: "url(../../image_data/monsters/Twister.png)",
     img_size: ["15%", "60%"],
   },
   {
@@ -102,7 +102,7 @@ const monsters = [
     scaling: [0, 0, 0],
     skills: [2],
     status: [],
-    img_src: "url(../../image_data/Mystery.png)",
+    img_src: "url(../../image_data/monsters/Mystery.png)",
     img_size: ["15%", "60%"],
   },
 ];

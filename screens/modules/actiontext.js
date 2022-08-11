@@ -1,34 +1,22 @@
-//  Text control for bottom left box
+//  Typewriter text control
 
-const $actionText = (inputtext, time) => {
-  let $text = $("<h4>")
-    .attr("id", "actiontext")
-    .css({
-      color: "ghostwhite",
-      "font-family": "Alagard",
-      "font-size": "2rem",
-      "word-wrap": "break-word",
-    })
-    .text("");
-
-  const typewriter = (text) => {
+const $actionText = (inputtext, time, window = $("#actiontext")) => {
+  //  Text input
     const textarray = [];
-    textarray.push(text);
+    textarray.push(inputtext);
     let textPosition = 0;
     //  1000ms = 1s, length / (time to render)
     const speed = Math.floor(1000 / (textarray[0].length / time));
+
+    //  Inner rewriting text
     const innertypewriter = () => {
-      $("#actiontext").text(textarray[0].substring(0, textPosition));
+      window.text(textarray[0].substring(0, textPosition));
       if (textPosition++ != textarray[0].length) {
         setTimeout(innertypewriter, speed);
       }
     };
+
     innertypewriter();
-  };
-
-  typewriter(inputtext);
-
-  return $text;
 };
 
 export default $actionText;
