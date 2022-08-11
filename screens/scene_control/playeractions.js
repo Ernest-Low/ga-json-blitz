@@ -85,33 +85,50 @@ const player_actions = {
 
     this.damage_target(final_damage, target, "a basic attack");
   },
+
+  player_skill: function (entity, spell, target) {
+    this.reset_critical();
+    console.log(spell);
+    let damage_spill_chance = Math.random();
+    damage_spill_chance > 0.5
+      ? (damage_spill_chance = 1)
+      : (damage_spill_chance = -1);
+    console.log(damage_spill_chance);
+    let spell_damage =
+      spell.damage +
+      spell.scaling[0] * entity.strength +
+      spell.scaling[1] * entity.agility +
+      spell.scaling[2] * entity.intelligence +
+      damage_spill_chance *
+        Math.floor(Math.random() * (spell.damage_spill + 1));
+    console.log(`First spell damage calculation: ${spell_damage}`);
+    const damage_total = this.damage_adjustment(
+      this.critical_check(entity, spell_damage)
+    );
+    //  Target buffs for defense go here in calculations
+    const final_damage = damage_total - target.armor;
+    this.damage_target(final_damage, target, spell.name);
+    update_hpmp(entity, spell.health_cost, spell.mana_cost);
+  },
 };
 
 export default player_actions;
 
 // {
-//     name: "Dissidia",
-//     id: "",
-//     level: 0,
-//     exp: 0,
-//     exp_req: 100,
-//     health: 100,
-//     health_max: 100,
-//     mana: 20,
-//     mana_max: 20,
-//     crit_chance: 5,
-//     // armor: 0,    //* Future when armor is added
-//     strength: 5,
-//     agility: 5,
-//     intelligence: 5,
-//     gold: 0,
-//     equipment: {
-//       weapon: 1001,
-//     },
-//     items: [2001],
-//     skills: [],
-//     status: [],
-//   };
+//   name: "Power Slash",
+//   id: 1,
+//   health_cost: 0,
+//   mana_cost: 6,
+//   cooldown: 0,
+//   damage: 6,
+//   scaling: [0.5, 0, 0],
+//   damage_spill: 2,
+//   type: "skill",
+//   weapon: "melee",
+//   buff: [],
+//   debuff: [],
+//   cost: 50,
+// }
 
 // {
 //     name: "Rusty Sword",

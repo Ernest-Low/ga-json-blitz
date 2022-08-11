@@ -27,7 +27,16 @@ const afterBattle = {
 
   //* Call defeat function
   defeat: function () {
-    this.afterScreen("DEFEAT!");
+    //!  Add a restart button
+    //*  Didn't have time for now, but it's needed
+    $("#blackscreen").append("div").css({
+      width: "100%",
+      height: "100%",
+      "background-image": "url(image_data/modules/Results/Game Over.png)",
+      "background-size": "100% 100%",
+      "background-repeat": "no-repeat",
+      "object-fit": "contain",
+    });
   },
 
   //  Gold drop (temp) = Monster levels * 10 +/- 10%, + between 10 - 20 gold
@@ -190,7 +199,7 @@ const afterBattle = {
 
     //  Money picture
     const $goldpic = $("<div>").css({
-      width: "25%",
+      width: "35%",
       height: "30%",
       "background-image": "url(image_data/icons/currency/currency_coin.png)",
       "background-size": "100% 100%",

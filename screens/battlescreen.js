@@ -1,6 +1,7 @@
 import current_entities from "./entities.js";
 import $actions from "./modules/actions.js";
 import $actionText from "./modules/actionText.js";
+import create_actionText from "./modules/create_actiontext.js";
 import $entity_window from "./modules/entity.js";
 
 //* Render Battle Screen (Fighting scene)
@@ -74,16 +75,16 @@ const battleScreen = () => {
     padding: "0rem 2.5rem 0rem 2.5rem",
   });
 
-  //  Bottom Left Panel (textbox)
-  const $textpanel = $("<h4>")
-    .attr("id", "actiontext")
-    .css({
-      color: "ghostwhite",
-      "font-family": "Alagard",
-      "font-size": "2rem",
-      "word-wrap": "break-word",
-    })
-    .text("");
+  // //  Bottom Left Panel (textbox)
+  // const $textpanel = $("<h4>")
+  //   .attr("id", "actiontext")
+  //   .css({
+  //     color: "ghostwhite",
+  //     "font-family": "Alagard",
+  //     "font-size": "2rem",
+  //     "word-wrap": "break-word",
+  //   })
+  //   .text("");
 
   //  Inbetween the player and enemy
   const $battlearea = $("<div>").attr("id", "battlearea").css({
@@ -99,7 +100,8 @@ const battleScreen = () => {
 
   //  Showtext (#actiontext)
   const zonetext = `Now entering: ${current_entities.zone.name}`;
-  $longpanel.append($textpanel);
+  // $longpanel.append($textpanel);
+  create_actionText();
   $actionText(zonetext, 1);
 
   // Generates the player in the window above

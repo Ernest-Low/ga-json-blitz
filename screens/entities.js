@@ -14,6 +14,7 @@ const current_entities = {
   currentmonster: "",
   current_turn: "player",
   fight_status: "",
+  skillbar_status: false,
 };
 
 export default current_entities;

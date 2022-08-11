@@ -2,6 +2,8 @@
 //! Attack, Skills, Items, Run
 import player_actions from "../scene_control/playeractions.js";
 import current_entities from "../entities.js";
+import actionSkills from "./actionskills.js";
+import create_actionText from "./create_actiontext.js";
 
 const $actions = () => {
   //  CSS For Buttons
@@ -40,6 +42,19 @@ const $actions = () => {
     .text("SKILLS")
     .on("click", () => {
       console.log("Using a skill");
+      if (current_entities.current_turn == "player") {
+        if (current_entities.skillbar_status == false) {
+          console.log("removing text and enabling skills");
+          $("#actiontext").remove();
+          actionSkills();
+          current_entities.skillbar_status = true;
+        } else {
+          console.log("adding text and disabling skills");
+          $("#skillscontainer").remove();
+          create_actionText();
+          current_entities.skillbar_status = false;
+        }
+      }
     });
 
   //  Open Items
