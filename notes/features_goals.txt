@@ -1,0 +1,61 @@
+A List of features I would like to add / need to add.
+
+
+
+
+Storyboard
+- Need to think up a story(?)
+> Like the 'yada yada brave adventurer / hero please save our kingdom' at start, then a 'muahahaha demon king will rule the world' kinda thing
+
+
+Zones
+- Do enemy zones dictate what level enemies are in them?
+- Enemy zones are objects with keyvalues?
+- How many enemies for a player to get out of a zone
+- Shop scenery?
+- Kingdom far-zoom scenery?
+- Scaling enemies based on zone (variables and constructors)
+
+
+Leveling stats screen
+> Hit [Stats] or something and can press buttons to add to stats
+    - Confirm button for confirmation
+    - Back to go back to previous screen
+
+
+Spells / Skills
+Scaling off Str, Agi, Int
+- Some increase an attribute for a few turns?
+- Others just deal damage
+- Debuffs / Buffs
+
+Shop
+- Plain text in a screen for now (Popup or dedicated screen?)
+- Possibly have an image serve as background (shop scenery)
+
+
+Enemy targeting
+> For scaling, assign enemy target as a variable.
+    - Adds possiblity for changing enemy target in future (multiple enemies)
+    - Also save the enemy in an array probably
+    - Idea: Click enemy target to target them
+
+
+HP Bars
+- Everyone to have hp bar above their head
+- ? Should enemies have their hp bars listed in a grid too?
+    > Probably only when targeting them
+-- On hit, have a large red number flash to show the damage inflicted over the character
+https://www.w3schools.com/js/js_events.asp
+
+
+Left of scene / Top of scene - Progress tracker
+- How long till boss of zone
+
+
+Character / Monster Image
+- Might need to add an image-size property to make the div bigger / smaller to not make the enemy so small
+
+
+Restart Game
+- Add a way to full restart the game as needed

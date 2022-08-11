@@ -10,7 +10,9 @@ const current_entities = {
   zone: {},
   currentplayer: "",
   currentmonster: "",
-  current_turn: "player"
+  current_turn: "player",
+  fight_status: "",
+
 };
 
 

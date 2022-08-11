@@ -1,4 +1,4 @@
-//  Typewriter text control
+//!  Typewriter text control
 
 const $actionText = (inputtext, time, window = $("#actiontext")) => {
   //  Text input

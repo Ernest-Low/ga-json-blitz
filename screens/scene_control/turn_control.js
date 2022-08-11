@@ -6,6 +6,7 @@
 import current_entities from "../entities";
 import enemyAttack from "./enemyattack";
 import $actionText from "../modules/actionText.js";
+import afterBattle from "../modules/afterBattle";
 
 const turn_control = {
   //  Linked to checking all dead enemies, checks if there are no remaining entities
@@ -21,6 +22,12 @@ const turn_control = {
     ) {
       console.log("DEFEAT!");
       current_entities.current_turn = "ended";
+      current_entities.fight_status = "DEFEAT!";
+      afterBattle();
+      $("#battlescreen").fadeOut(1000);
+      setTimeout(() => {
+        $("#battlescreen").remove();
+      }, 1050);
     }
 
     //  Victory (all monsters dead)
@@ -34,6 +41,12 @@ const turn_control = {
     ) {
       console.log("VICTORY!");
       current_entities.current_turn = "ended";
+      current_entities.fight_status = "VICTORY!";
+      afterBattle();
+      $("#battlescreen").fadeOut(1000);
+      setTimeout(() => {
+        $("#battlescreen").remove();
+      }, 1050);
     }
   },
 

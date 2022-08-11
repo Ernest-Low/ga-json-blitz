@@ -9,7 +9,7 @@ import current_fight from "./current_fight";
 const mainScreen = () => {
   //  Back blackscreen
   $("body").append(
-    $("<div>").attr("id", "backblackscreen").css({
+    $("<div>").attr("id", "blackscreen").css({
       "z-index": -1,
       width: "80vw",
       height: "95vh",
@@ -66,10 +66,10 @@ const mainScreen = () => {
       let copiedhero = JSON.parse(JSON.stringify(player));
       current_entities.players.push(copiedhero);
       current_entities.players[0].id = "p1";
-      current_entities.players[0].name = "Alphinaud";
+      current_entities.players[0].name = "Guts";
       //! Declaring castle zone (temp)
       current_entities.zone = JSON.parse(JSON.stringify(zones.castle));
-      
+
       zone_control();
       current_fight();
 

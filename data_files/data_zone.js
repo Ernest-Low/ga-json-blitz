@@ -1,4 +1,4 @@
-//* Starting zone: Forest
+//* Starting zone: Castle (for now)
 //* Enemies by ID type + range in future
 //* For now, specifiy exactly what enemy goes in
 

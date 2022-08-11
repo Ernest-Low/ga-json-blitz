@@ -1,5 +1,9 @@
+//! Enemy attack control
+
 //? How will the enemy decide to attack / use a skill?
 //* Math roll ? Equal chance to attack / use any skill. When skills are on cooldown / lack mana, they will default to regular attack.
+//  Think of a better calculation for enemy deciding to use a skill
+//* Enemies might cast more spells if they have more int maybe?
 
 //  ? Monster Damage Calculation
 //  * Damage window = (damage - damage_spill) to (damage + damage_spill)

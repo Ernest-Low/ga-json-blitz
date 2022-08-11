@@ -1,0 +1,28 @@
+Goals:
+
+!!! Overall Project Goals !!!
+Scaleability - Able to add more objects easily to add 'content', requires as little hard-coding as possible
+Flexible - Able to add difficulty settings into any form of calculation, to create various levels of difficulty (eg: harder to level, less healing, harder enemies)
+Clean Code (Non-Sphaggeti) - Well named / documented / comments to make it easy to find what each block of code does 
+Scaleable Complexity - Additional systems can be added without having to modify the base code much
+All Devices - To have media queries / scaleable CSS to ensure it's as playable on a mobile phone as it is on a TV
+Bug Free - All / most attempts of creating errors by doing strange things in the game must not result in inability to continue
+
+
+!! Game Goals !!
+Non-repetitive - The player must not feel it too reptitive, a new element introduced or the game length to not be too long
+Visually Right - Aethestically pleasing, without blemish or out of place objects
+Easy to pick up - UI must be clean and intuitive, with the goals well outlined / popup boxes
+Suspense / Drama - The feeling of getting a new item, almost game over'ing, things to keep the player on edge occasionally
+Fun RNG - Variance of rolls must not deeply affect the game, and offer opportunities for counterplay
+Immersive - The player needs to feel the atmosphere, be it them as duty-bound or free-spirited.
+Epic - The setting must give the player a sense of awe when confronted with an exceptionally important scene
+
+
+! Extra Game Goals !
+Save - Be it to pick up the game at a later time or to save before a boss fight. To offer comfort to the player
+Leaderboard - How well did each player do? An online leaderboard would encourage players
+Customization - Offer the player to not dive into the code but still add various customization of their own, while within the game
+Accessiblity - Able to play the game using just arrow keys to navigate
+Leveling Stats - Assign stat points after each level to empower playstyles
+Multiplayer - Solo play has great potential, but multiplayer always add another layer!

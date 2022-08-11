@@ -108,6 +108,12 @@ const battleScreen = () => {
     $battlearea,
     $entity_window(current_entities.monsters[0])
   );
+  $("#blackscreen").css({ "z-index": 3 });
+  $("#blackscreen").fadeOut(2000);
+  setTimeout(() => {
+    $("#blackscreen").css({ "z-index": -1 });
+    $("#blackscreen").fadeIn(50);
+  }, 2000);
 };
 
 export default battleScreen;
