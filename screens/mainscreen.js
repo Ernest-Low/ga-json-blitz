@@ -80,7 +80,7 @@ const mainScreen = () => {
       let copiedhero = JSON.parse(JSON.stringify(player));
       current_entities.players.push(copiedhero);
       current_entities.players[0].id = "p1";
-      current_entities.players[0].name = $("#inputname").val() || "Guts";
+      current_entities.players[0].name = $("#inputname").val().trim() || "Guts";
       //! Declaring castle zone (temp)
       current_entities.zone = JSON.parse(JSON.stringify(zones.castle));
 
