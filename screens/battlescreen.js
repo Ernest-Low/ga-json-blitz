@@ -1,8 +1,8 @@
-import current_entities from "./entities.js";
-import $actions from "./modules/actions.js";
-import $actionText from "./modules/actionText.js";
-import create_actionText from "./modules/create_actiontext.js";
-import $entity_window from "./modules/entity.js";
+import current_entities from "screens/entities.js";
+import $actions from "screens/modules/actions.js";
+import $actionText from "screens/modules/actionText.js";
+import create_actionText from "screens/modules/create_actiontext.js";
+import $entity_window from "screens/modules/entity.js";
 
 //* Render Battle Screen (Fighting scene)
 const battleScreen = () => {

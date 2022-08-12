@@ -1,6 +1,6 @@
 //!  Render character into scene
 
-import character_info from "./infobox.js";
+import character_info from "screens/modules/infobox.js";
 
 const $entity_window = (entity) => {
   // const player1 = current_entities.players[0];

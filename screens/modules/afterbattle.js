@@ -4,10 +4,10 @@
 
 //* Use after keywords for ids
 
-import current_entities from "../entities.js";
-import items from "../../data_files/data_items.js";
-import iteminfo from "./iteminfo.js";
-import create_battle from "./create_battle.js";
+import current_entities from "screens/entities.js";
+import items from "data_files/data_items.js";
+import iteminfo from "screens/modules/iteminfo.js";
+import create_battle from "screens/modules/create_battle.js";
 
 const afterBattle = {
   //  Check if zone is completed

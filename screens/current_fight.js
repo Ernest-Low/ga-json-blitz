@@ -1,7 +1,7 @@
 //! Reset current targets
 //? Use to set enemy targets in future?
 
-import current_entities from "./entities";
+import current_entities from "screens/entities";
 
 const current_fight = () => {
   //! Placeholder enemy targeting / speed
