@@ -23,7 +23,7 @@ const mainScreen = () => {
     "align-items": "flex-end",
     "justify-content": "center",
     "z-index": 1,
-    "background-image": "url(../image_data/backgrounds/Game_Landing_Page.png)",
+    "background-image": `url("../image_data/backgrounds/Game_Landing_Page.png")`,
     "background-size": "100% 100%",
     "background-repeat": "no-repeat",
     "object-fit": "fill",

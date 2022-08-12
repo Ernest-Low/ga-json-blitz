@@ -24,7 +24,7 @@ const items = [
     attributes: [0, 0, 0, 0, 0],
     scaling: [0.2, 0, 0],
     type: "Melee",
-    img_src: "url(image_data/icons/weapons/sword/sword_1.png)",
+    img_src: 'image_data/icons/weapons/sword/sword_1.png',
     value: 50,
   },
   {
@@ -37,7 +37,7 @@ const items = [
     attributes: [1, 0, 0, 0, 0],
     scaling: [0.2, 0, 0],
     type: "Melee",
-    img_src: "url(image_data/icons/weapons/sword/sword_2.png)",
+    img_src: 'image_data/icons/weapons/sword/sword_2.png',
     value: 200,
   },
   {
@@ -50,7 +50,7 @@ const items = [
     attributes: [0, 0, 0, 0, 0],
     scaling: [0, 0.3, 0],
     type: "Ranged",
-    img_src: "url(image_data/icons/weapons/bow/bow_1.png)",
+    img_src: 'image_data/icons/weapons/bow/bow_1.png',
     value: 50,
   },
   {
@@ -63,7 +63,7 @@ const items = [
     attributes: [0, 1, 0, 0, 0],
     scaling: [0, 0.3, 0],
     type: "Ranged",
-    img_src: "url(image_data/icons/weapons/bow/bow_2.png)",
+    img_src: 'image_data/icons/weapons/bow/bow_2.png',
     value: 200,
   },
   {
@@ -76,7 +76,7 @@ const items = [
     attributes: [0, 0, 1, 0, 10],
     scaling: [0, 0, 0],
     type: "Magic",
-    img_src: "url(image_data/icons/weapons/staff/staff_1.png)",
+    img_src: 'image_data/icons/weapons/staff/staff_1.png',
     value: 50,
   },
   {
@@ -89,7 +89,7 @@ const items = [
     attributes: [0, 0, 2, 0, 20],
     scaling: [0, 0, 0],
     type: "Magic",
-    img_src: "url(image_data/icons/weapons/staff/staff_2.png)",
+    img_src: 'image_data/icons/weapons/staff/staff_2.png',
     value: 200,
   },
 
@@ -100,7 +100,7 @@ const items = [
     rarity: "Common",
     potency: 20,
     type: "Health",
-    img_src: "url(image_data/icons/consumables/health_pot/health_pot_1.png)",
+    img_src: 'image_data/icons/consumables/health_pot/health_pot_1.png',
     value: 20,
   },
   {
@@ -110,7 +110,7 @@ const items = [
     rarity: "Common",
     potency: 35,
     type: "Health",
-    img_src: "url(image_data/icons/consumables/health_pot/health_pot_2.png)",
+    img_src: 'image_data/icons/consumables/health_pot/health_pot_2.png',
     value: 50,
   },
   {
@@ -120,7 +120,7 @@ const items = [
     rarity: "Common",
     potency: 20,
     type: "Mana",
-    img_src: "url(image_data/icons/consumables/mana_pot/mana_pot_1.png)",
+    img_src: 'image_data/icons/consumables/mana_pot/mana_pot_1.png',
     value: 20,  
   },
   {
@@ -130,7 +130,7 @@ const items = [
     rarity: "Common",
     potency: 40,
     type: "Mana",
-    img_src: "url(image_data/icons/consumables/mana_pot/mana_pot_2.png)",
+    img_src: 'image_data/icons/consumables/mana_pot/mana_pot_2.png',
     value: 50,
   },
 ];

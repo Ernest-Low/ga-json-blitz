@@ -39,7 +39,7 @@ const monsters = [
     scaling: [0.3, 0.2, 0],
     skills: [],
     status: [],
-    img_src: "url(image_data/monsters/Goblin_Grunt.png)",
+    img_src: 'image_data/monsters/Goblin_Grunt.png',
     img_size: ["8.5%", "30%"],
   },
   {
@@ -60,7 +60,7 @@ const monsters = [
     scaling: [0.5, 0.1, 0],
     skills: [],
     status: [],
-    img_src: "url(image_data/monsters/Orc.png)",
+    img_src: 'image_data/monsters/Orc.png',
     img_size: ["10%", "40%"],
   },
   {
@@ -81,7 +81,7 @@ const monsters = [
     scaling: [0.2, 0.4, 0],
     skills: [],
     status: [],
-    img_src: "url(image_data/monsters/Twister.png)",
+    img_src: 'image_data/monsters/Twister.png',
     img_size: ["7.5%", "30%"],
   },
   {
@@ -102,7 +102,7 @@ const monsters = [
     scaling: [0, 0, 0],
     skills: [2],
     status: [],
-    img_src: "url(image_data/monsters/evil_shaman.png)",
+    img_src: 'image_data/monsters/evil_shaman.png',
     img_size: ["7.5%", "30%"],
   },{
     name: "Skeleton Archer",
@@ -122,7 +122,7 @@ const monsters = [
     scaling: [0.2, 0.4, 0],
     skills: [3],
     status: [],
-    img_src: "url(image_data/monsters/Skeleton_Archer.png)",
+    img_src: 'image_data/monsters/Skeleton_Archer.png',
     img_size: ["7.5%", "30%"],
   },
   {
@@ -143,7 +143,7 @@ const monsters = [
     scaling: [0.3, 0.5, 0],
     skills: [],
     status: [],
-    img_src: "url(image_data/monsters/skeletonhound.png)",
+    img_src: 'image_data/monsters/skeletonhound.png',
     img_size: ["10%", "25%"],
   },
   {
@@ -164,7 +164,7 @@ const monsters = [
     scaling: [0.3, 0.5, 0],
     skills: [],
     status: [],
-    img_src: "url(image_data/monsters/Harpy.png)",
+    img_src: 'image_data/monsters/Harpy.png',
     img_size: ["10%", "25%"],
   }
 ];

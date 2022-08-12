@@ -9,7 +9,7 @@ const $entity_window = (entity) => {
   const $image = $("<div>").attr("id", `${entity.id}image`).css({
     width: "100%",
     height: "60%",
-    "background-image": `../../${entity.img_src}`,
+    "background-image": `url("../../${entity.img_src}")`,
     "background-size": "100% 100%",
     "background-repeat": "no-repeat",
     "object-fit": "fill",
