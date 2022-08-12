@@ -63,19 +63,24 @@ const actionSkills = () => {
             $("#skillscontainer").remove();
             create_actionText();
             current_entities.skillbar_status = false;
-            if (
-              obj.weapon ==
-              items.filter((obj) => obj.id == player.equipment.weapon)[0].type
-            ) {
-              console.log("Correct weapon type, casting spell");
-              player_actions.player_skill(
-                player,
-                obj,
-                current_entities.monsters[current_entities.currentmonster]
-              );
+            if (player.mana >= obj.mana_cost) {
+              if (
+                obj.weapon ==
+                items.filter((obj) => obj.id == player.equipment.weapon)[0].type
+              ) {
+                console.log("Correct weapon type, casting spell");
+                player_actions.player_skill(
+                  player,
+                  obj,
+                  current_entities.monsters[current_entities.currentmonster]
+                );
+              } else {
+                console.log("Invalid weapon type equipped for spell");
+                $actionText("Invalid weapon type equipped for spell", 1);
+              }
             } else {
-              console.log("Invalid weapon type equipped for spell");
-              $actionText("Invalid weapon type equipped for spell", 1);
+              console.log("Not enough mana for spell");
+              $actionText("Not enough mana for spell", 1);
             }
           })
       );

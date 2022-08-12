@@ -7,8 +7,11 @@ import current_entities from "../entities";
 const create_battle = () => {
   //  Declare new zone (Future)
 
-  zone_control();
+  //  Reset variables first
   current_fight();
+
+  //  Declare monster(s) based on zone
+  zone_control();
 
   //  Open battlescreen
   battleScreen();

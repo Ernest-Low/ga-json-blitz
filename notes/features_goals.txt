@@ -87,6 +87,7 @@ Character selection screen
 Tooltips (more in coding_goals)
 - Items and skills to have tooltips (icon / information)
 - Genereate tooltip based on object!
+!!! >> ALSO ADD TOOLTIPS TO SPELLS IN SPELLWINDOW
 
 
 Monster revives / summons  (or player revivals)

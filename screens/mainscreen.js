@@ -38,12 +38,28 @@ const mainScreen = () => {
   const $textbox = $("<div>").attr("id", "maintextbox").css({
     display: "flex",
     "flex-direction": "column",
-    // "background-color": "blue", // Placeholder
     "z-index": 2,
     width: "20vw",
     height: "20vh",
     overflow: "hidden",
   });
+
+  const $inputname = $("<input>")
+    .attr({
+      type: "text",
+      id: "inputname",
+      placeholder: "Your Hero Name",
+      value: "",
+    })
+    .css({
+      color: "white",
+      "background-color": "rgba(0,0,0,0.8)",
+      "font-size": "1.5rem",
+      width: "100%",
+      height: "25%",
+      "font-family": "Alagard",
+      border: "none",
+    });
 
   // Game start button
   const $gamestart = $("<button>")
@@ -64,7 +80,7 @@ const mainScreen = () => {
       let copiedhero = JSON.parse(JSON.stringify(player));
       current_entities.players.push(copiedhero);
       current_entities.players[0].id = "p1";
-      current_entities.players[0].name = "Guts";
+      current_entities.players[0].name = $("#inputname").val() ?? "Guts";
       //! Declaring castle zone (temp)
       current_entities.zone = JSON.parse(JSON.stringify(zones.castle));
 
@@ -90,8 +106,7 @@ const mainScreen = () => {
 
   $("body").append($mainscreen);
   $("#mainscreen").append($textbox);
-  $("#maintextbox").append($gamestart);
-  $("#maintextbox").append($gamesettings);
+  $("#maintextbox").append($inputname, $gamestart, $gamesettings);
 };
 
 export default mainScreen;
