@@ -29,7 +29,7 @@ const zones = {
     name2: "castle",
     id: 3,
     level_range: [1, 3],
-    enemy_type: [1, 2, 3, 4],
+    enemy_type: [1, 2, 3, 4, 5],
     enemy_count: 8,
     random_zone: true,
     random_count: 18,

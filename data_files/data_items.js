@@ -1,5 +1,6 @@
 // ! Design item drop table?
-// * Attributes = [str,agi,int,hp,mp]
+// * Attributes = [str,agi,int,hp,mp] --! Change to an object for more visibility
+// * Scaling (Change to object as well for better visibility)
 // * Type: melee, ranged, magic
 // Melee higher base damage
 // Ranged higher damage spill, higher scaling
