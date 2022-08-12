@@ -1,4 +1,4 @@
-import current_entities from "screens/entities";
+import current_entities from "screens/entities.js"
 import player from "data_files/data_player.js";
 import zones from "data_files/data_zone";
 import create_battle from "screens/modules/create_battle";
