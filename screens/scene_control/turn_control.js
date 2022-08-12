@@ -6,7 +6,7 @@
 import current_entities from "../entities";
 import enemyAttack from "./enemyattack";
 import $actionText from "../modules/actionText.js";
-import afterBattle from "../modules/afterBattle.js";
+import afterBattle from "../modules/afterbattle.js";
 
 const turn_control = {
   //  Linked to checking all dead enemies, checks if there are no remaining entities
