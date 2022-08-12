@@ -58,7 +58,7 @@ const battleScreen = () => {
   const $actionpanel = $("<div>").attr("id", "actionpanel").css({
     width: "35%",
     height: "100%",
-    "background-image": "url(image_data/modules/Panels/4buttons.png)",
+    "background-image": "url(../image_data/modules/Panels/4buttons.png)",
     "background-size": "100% 100%",
     "background-repeat": "no-repeat",
     "object-fit": "fill",
@@ -68,7 +68,7 @@ const battleScreen = () => {
   const $longpanel = $("<div>").attr("id", "longpanel").css({
     width: "65%",
     height: "100%",
-    "background-image": "url(image_data/modules/Panels/largehpanel.png)",
+    "background-image": "url(../image_data/modules/Panels/largehpanel.png)",
     "background-size": "100% 100%",
     "background-repeat": "no-repeat",
     "object-fit": "fill",
