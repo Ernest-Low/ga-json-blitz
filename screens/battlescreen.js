@@ -37,7 +37,7 @@ const battleScreen = () => {
     let random_zone = Math.ceil(
       Math.random() * current_entities.zone.random_count
     );
-    random_zone = `url(/image_data/backgrounds/${current_entities.zone.name2}/${current_entities.zone.img_src}${random_zone}.png)`;
+    random_zone = `url(../image_data/backgrounds/${current_entities.zone.name2}/${current_entities.zone.img_src}${random_zone}.png)`;
     $battlescene.css({
       "background-image": random_zone,
     });
