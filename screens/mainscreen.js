@@ -1,7 +1,7 @@
-import current_entities from "screens/entities";
-import player from "data_files/data_player.js";
-import zones from "data_files/data_zone";
-import create_battle from "screens/modules/create_battle";
+import current_entities from "./entities";
+import player from "../data_files/data_player.js";
+import zones from "../data_files/data_zone";
+import create_battle from "./modules/create_battle";
 
 //* Render Mainscreen (Aka main)
 const mainScreen = () => {

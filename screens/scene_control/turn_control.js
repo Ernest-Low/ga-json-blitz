@@ -3,10 +3,10 @@
 //* Set timeouts when called to next action / unlock buttons when it's player's turn
 //  Also good place to trigger buffs / debuff effects
 
-import current_entities from "screens/entities";
-import enemyAttack from "screens/scene_control/enemyattack";
-import $actionText from "screens/modules/actionText.js";
-import afterBattle from "screens/modules/afterBattle.js"
+import current_entities from "../entities";
+import enemyAttack from "./enemyattack";
+import $actionText from "../modules/actionText.js";
+import afterBattle from "../modules/afterBattle.js";
 
 const turn_control = {
   //  Linked to checking all dead enemies, checks if there are no remaining entities

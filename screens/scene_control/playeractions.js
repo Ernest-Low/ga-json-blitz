@@ -1,8 +1,8 @@
-import items from "data_files/data_items.js";
-import update_hpmp from "screens/modules/update_hpmp.js";
-import $actionText from "screens/modules/actionText.js";
-import current_entities from "screens/entities.js";
-import turn_control from "screens/turn_control.js";
+import items from "../../data_files/data_items.js";
+import update_hpmp from "../modules/update_hpmp.js";
+import $actionText from "../modules/actionText.js";
+import current_entities from "../entities.js";
+import turn_control from "./turn_control.js";
 
 //  Weapon Info: Damage: Base Damage, weapon_spill means the diceroll variance. Eg: Weapon Damage 5, spill of 2, means the base damage is 5-2 to 5+2 (3 - 7)
 //  Critical Chance: Base of 5%. Increased by skills / items. (Math.ceil(Math.random()* 100)

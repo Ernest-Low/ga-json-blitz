@@ -1,9 +1,9 @@
 //*  Actions window
 //! Attack, Skills, Items, Run
-import player_actions from "screens/scene_control/playeractions.js";
-import current_entities from "screens/entities.js";
-import actionSkills from "screens/modules/actionSkills.js";
-import create_actionText from "screens/modules/create_actiontext.js";
+import player_actions from "../scene_control/playeractions.js";
+import current_entities from "../entities.js";
+import actionSkills from "./actionSkills.js";
+import create_actionText from "./create_actiontext.js";
 
 const $actions = () => {
   //  CSS For Buttons

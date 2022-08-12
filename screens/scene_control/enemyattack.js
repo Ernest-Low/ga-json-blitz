@@ -9,11 +9,11 @@
 //  * Damage window = (damage - damage_spill) to (damage + damage_spill)
 //  * Critical chance (150% damage) - Base of 3%.
 
-import update_hpmp from "screens/modules/update_hpmp.js";
-import $actionText from "screens/modules/actionText.js";
-import turn_control from "screens/scene_control/turn_control";
-import current_entities from "screens/entities";
-import skills_list from "data_files/data_skills.js";
+import update_hpmp from "../modules/update_hpmp.js";
+import $actionText from "../modules/actionText.js";
+import turn_control from "./turn_control";
+import current_entities from "../entities";
+import skills_list from "../../data_files/data_skills.js";
 
 const enemyAttack = {
   reset_critical: function () {

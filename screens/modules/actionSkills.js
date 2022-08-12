@@ -2,12 +2,12 @@
 
 //* Try overflow:auto to make scrollable div?
 //  https://www.youtube.com/watch?v=v_8CmC6cwUs
-import player_actions from "screens/scene_control/playeractions.js";
-import current_entities from "screens/entities";
-import skills_list from "data_files/data_skills";
-import create_actionText from "screens/modules/create_actiontext";
-import items from "data_files/data_items.js";
-import $actionText from "screens/modules/actionText.js";
+import player_actions from "../scene_control/playeractions.js";
+import current_entities from "../entities";
+import skills_list from "../../data_files/data_skills";
+import create_actionText from "./create_actiontext";
+import items from "../../data_files/data_items.js";
+import $actionText from "./actionText.js";
 
 const actionSkills = () => {
   const skillscontainer = $("<div>").attr("id", "skillscontainer").css({
