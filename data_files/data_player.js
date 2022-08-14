@@ -32,7 +32,7 @@ const player = {
   },
   skills: [1],
   status: [],
-  img_src: "url(image_data/players/Arms_Warrior.png)",
+  img_src: 'image_data/players/Arms_Warrior.png',
   img_size: ["10%", "35%"],
 };
 

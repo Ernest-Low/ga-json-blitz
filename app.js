@@ -1,3 +1,4 @@
 import mainScreen from "./screens/mainscreen.js";
-mainScreen(); // Initialize Mainscreen
+import $ from "jquery";
 
+mainScreen(); // Initialize Mainscreen
