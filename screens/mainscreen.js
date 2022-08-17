@@ -3,7 +3,7 @@ import player from "../data_files/data_player.js";
 import zones from "../data_files/data_zone";
 import create_battle from "./modules/create_battle";
 
-import backgrounds from "/assets/image_data/backgrounds"
+import backgrounds from "/assets/image_data/backgrounds/Game_Landing_Page.png"
 
 //* Render Mainscreen (Aka main)
 const mainScreen = () => {
