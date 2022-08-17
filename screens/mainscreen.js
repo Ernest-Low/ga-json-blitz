@@ -3,8 +3,6 @@ import player from "../data_files/data_player.js";
 import zones from "../data_files/data_zone";
 import create_battle from "./modules/create_battle";
 
-import backgrounds from "/assets/image_data/backgrounds/Game_Landing_Page.png"
-
 //* Render Mainscreen (Aka main)
 const mainScreen = () => {
   //  Back blackscreen
@@ -25,7 +23,7 @@ const mainScreen = () => {
     "align-items": "flex-end",
     "justify-content": "center",
     "z-index": 1,
-    "background-image": `url("/assets/image_data/backgrounds/Game_Landing_Page.png")`,
+    "background-image": `url("https://github.com/Ernest-Low/project1/tree/main/assets/image_data/backgrounds/Game_Landing_Page.png")`,
     "background-size": "100% 100%",
     "background-repeat": "no-repeat",
     "object-fit": "fill",
