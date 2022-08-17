@@ -22,7 +22,7 @@ const battleScreen = () => {
   const $battlescene = $("<div>").attr("id", "battlescene").css({
     width: "100%",
     height: "75%",
-    "background-image": `url("../${current_entities.zone.img_src}")`,
+    "background-image": `url("/assets/${current_entities.zone.img_src}")`,
     "background-size": "100% 100%",
     "background-repeat": "no-repeat",
     "object-fit": "fill",
@@ -37,7 +37,7 @@ const battleScreen = () => {
     let random_zone = Math.ceil(
       Math.random() * current_entities.zone.random_count
     );
-    random_zone = `url("../image_data/backgrounds/${current_entities.zone.name2}/${current_entities.zone.img_src}${random_zone}.png")`;
+    random_zone = `url("/assets/image_data/backgrounds/${current_entities.zone.name2}/${current_entities.zone.img_src}${random_zone}.png")`;
     $battlescene.css({
       "background-image": random_zone,
     });
@@ -58,7 +58,7 @@ const battleScreen = () => {
   const $actionpanel = $("<div>").attr("id", "actionpanel").css({
     width: "35%",
     height: "100%",
-    "background-image": `url("../image_data/modules/Panels/4buttons.png")`,
+    "background-image": `url("/assets/image_data/modules/Panels/4buttons.png")`,
     "background-size": "100% 100%",
     "background-repeat": "no-repeat",
     "object-fit": "fill",
@@ -68,7 +68,7 @@ const battleScreen = () => {
   const $longpanel = $("<div>").attr("id", "longpanel").css({
     width: "65%",
     height: "100%",
-    "background-image": `url("../image_data/modules/Panels/largehpanel.png")`,
+    "background-image": `url("/assets/image_data/modules/Panels/largehpanel.png")`,
     "background-size": "100% 100%",
     "background-repeat": "no-repeat",
     "object-fit": "fill",
