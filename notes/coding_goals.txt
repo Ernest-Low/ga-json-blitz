@@ -97,3 +97,7 @@ Tooltips
 Objects using IDs as Keys
 - data_files can be rewritten, using IDs.
 - Change the arrays so they're more more intuitive
+
+Change objects stored in players (items / spells) to be objects and not references
+- Allows individual changing & modification of those objects
+- Probably better than always referencing back to the data
