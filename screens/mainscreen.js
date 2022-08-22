@@ -3,6 +3,8 @@ import player from "../data_files/data_player.js";
 import zones from "../data_files/data_zone";
 import create_battle from "./modules/create_battle";
 
+import background_img from "/assets/image_data/backgrounds/Game_Landing_Page.png";
+
 //* Render Mainscreen (Aka main)
 const mainScreen = () => {
   //  Back blackscreen
@@ -18,21 +20,24 @@ const mainScreen = () => {
   );
 
   //  Mainscreen cover
-  const $mainscreen = $("<div>").attr("id", "mainscreen").css({
-    display: "flex",
-    "align-items": "flex-end",
-    "justify-content": "center",
-    "z-index": 1,
-    "background-image": `url("/public/assets/image_data/backgrounds/Game_Landing_Page.png")`,
-    "background-size": "100% 100%",
-    "background-repeat": "no-repeat",
-    "object-fit": "fill",
-    width: "80vw",
-    height: "95vh",
-    border: "4px solid blue",
-    overflow: "hidden",
-    position: "absolute",
-  });
+  const $mainscreen = $("<div>")
+    .attr("id", "mainscreen")
+    .css({
+      display: "flex",
+      "align-items": "flex-end",
+      "justify-content": "center",
+      "z-index": 1,
+      "background-image": `${background_img}`,
+      // "background-image": `url("/assets/image_data/backgrounds/Game_Landing_Page.png")`,
+      "background-size": "100% 100%",
+      "background-repeat": "no-repeat",
+      "object-fit": "fill",
+      width: "80vw",
+      height: "95vh",
+      border: "4px solid blue",
+      overflow: "hidden",
+      position: "absolute",
+    });
 
   // Textholder div center-bottom
   const $textbox = $("<div>").attr("id", "maintextbox").css({
