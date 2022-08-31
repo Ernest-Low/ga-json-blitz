@@ -51,19 +51,19 @@ const iteminfo = {
       .text(`${obj.name}`)
       .append(
         $("<div>")
-          .addClass("tooltipbox")
+          .addClass("tooltipbox").lazyload({threshold: 200})
           .css({
             "background-image":
-              `url("/assets/image_data/modules/Panels/rectanglevpanel.png")`,
+              `url("/public/assets/image_data/modules/Panels/rectanglevpanel.png")`,
             "background-size": "100% 100%",
             "background-repeat": "no-repeat",
             "object-fit": "contain",
           })
           .append(
-            $("<div>").css({
+            $("<div>").lazyload({threshold: 200}).css({
               width: "10rem",
               height: "10rem",
-              "background-image": `url("/assets/${obj.img_src}")`,
+              "background-image": `url("/public/assets/${obj.img_src}")`,
               "background-size": "100% 100%",
               "background-repeat": "no-repeat",
               "object-fit": "fill",

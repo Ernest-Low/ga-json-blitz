@@ -19,10 +19,10 @@ const battleScreen = () => {
   });
 
   //  Top scene
-  const $battlescene = $("<div>").attr("id", "battlescene").css({
+  const $battlescene = $("<div>").attr("id", "battlescene").lazyload({threshold: 200}).css({
     width: "100%",
     height: "75%",
-    "background-image": `url("/assets/${current_entities.zone.img_src}")`,
+    "background-image": `url("/public/assets/${current_entities.zone.img_src}")`,
     "background-size": "100% 100%",
     "background-repeat": "no-repeat",
     "object-fit": "fill",
@@ -37,7 +37,7 @@ const battleScreen = () => {
     let random_zone = Math.ceil(
       Math.random() * current_entities.zone.random_count
     );
-    random_zone = `url("/assets/image_data/backgrounds/${current_entities.zone.name2}/${current_entities.zone.img_src}${random_zone}.png")`;
+    random_zone = `url("/public/assets/image_data/backgrounds/${current_entities.zone.name2}/${current_entities.zone.img_src}${random_zone}.png")`;
     $battlescene.css({
       "background-image": random_zone,
     });
@@ -55,20 +55,20 @@ const battleScreen = () => {
   });
 
   //  Bottom right panel (4 grid)
-  const $actionpanel = $("<div>").attr("id", "actionpanel").css({
+  const $actionpanel = $("<div>").attr("id", "actionpanel").lazyload({threshold: 200}).css({
     width: "35%",
     height: "100%",
-    "background-image": `url("/assets/image_data/modules/Panels/4buttons.png")`,
+    "background-image": `url("/public/assets/image_data/modules/Panels/4buttons.png")`,
     "background-size": "100% 100%",
     "background-repeat": "no-repeat",
     "object-fit": "fill",
   });
 
   //  Bottom Left Panel (Long box)
-  const $longpanel = $("<div>").attr("id", "longpanel").css({
+  const $longpanel = $("<div>").attr("id", "longpanel").lazyload({threshold: 200}).css({
     width: "65%",
     height: "100%",
-    "background-image": `url("/assets/image_data/modules/Panels/largehpanel.png")`,
+    "background-image": `url("/public/assets/image_data/modules/Panels/largehpanel.png")`,
     "background-size": "100% 100%",
     "background-repeat": "no-repeat",
     "object-fit": "fill",

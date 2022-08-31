@@ -29,10 +29,10 @@ const afterBattle = {
   defeat: function () {
     //!  Add a restart button
     //*  Didn't have time for now, but it's needed
-    $("#blackscreen").append("div").css({
+    $("#blackscreen").append("div").lazyload({threshold: 200}).css({
       width: "100%",
       height: "100%",
-      "background-image": `url("/assets/image_data/modules/Results/Game Over.png")`,
+      "background-image": `url("/public/assets/image_data/modules/Results/Game Over.png")`,
       "background-size": "100% 100%",
       "background-repeat": "no-repeat",
       "object-fit": "contain",
@@ -111,14 +111,14 @@ const afterBattle = {
 
   afterScreen: function (status) {
     //  Append this screen on the black screen
-    const $afterscreen = $("<div>").attr("id", "afterscreen").css({
+    const $afterscreen = $("<div>").attr("id", "afterscreen").lazyload({threshold: 200}).css({
       display: "flex",
       position: "absolute",
       // "justify-content": "space-around",
       "flex-direction": "column",
       "align-items": "center",
       "z-index": 0,
-      "background-image": `url("/assets/image_data/modules/Results/victory2.png")`,
+      "background-image": `url("/public/assets/image_data/modules/Results/victory2.png")`,
       "background-size": "100% 100%",
       "background-repeat": "no-repeat",
       "object-fit": "fill",
@@ -198,10 +198,10 @@ const afterBattle = {
       .text(golden_text);
 
     //  Money picture
-    const $goldpic = $("<div>").css({
+    const $goldpic = $("<div>").lazyload({threshold: 200}).css({
       width: "35%",
       height: "30%",
-      "background-image": `url("/assets/image_data/icons/currency/currency_coin.png")`,
+      "background-image": `url("/public/assets/image_data/icons/currency/currency_coin.png")`,
       "background-size": "100% 100%",
       "background-repeat": "no-repeat",
       "object-fit": "contain",
@@ -315,13 +315,13 @@ const afterBattle = {
     //* Shop Button
     //* Inventory Button
 
-    const $nextmatch = $("<div>")
+    const $nextmatch = $("<div>").lazyload({threshold: 200})
       .css({
         flex: "none",
         width: "25%",
         height: "50%",
         "background-image":
-          `url("/assets/image_data/modules/Buttons/greenrectangle.png")`,
+          `url("/public/assets/image_data/modules/Buttons/greenrectangle.png")`,
         "background-size": "100% 100%",
         "background-repeat": "no-repeat",
         "object-fit": "contain",
@@ -353,13 +353,13 @@ const afterBattle = {
           })
       );
 
-    const $shop = $("<div>")
+    const $shop = $("<div>").lazyload({threshold: 200})
       .css({
         flex: "none",
         width: "25%",
         height: "50%",
         "background-image":
-          `url("/assets/image_data/modules/Buttons/greenrectangle.png")`,
+          `url("/public/assets/image_data/modules/Buttons/greenrectangle.png")`,
         "background-size": "100% 100%",
         "background-repeat": "no-repeat",
         "object-fit": "contain",
@@ -383,13 +383,13 @@ const afterBattle = {
           })
       );
 
-    const $inventory = $("<div>")
+    const $inventory = $("<div>").lazyload({threshold: 200}).lazyload({threshold: 200})
       .css({
         flex: "none",
         width: "25%",
         height: "50%",
         "background-image":
-          `url("/assets/image_data/modules/Buttons/greenrectangle.png")`,
+          `url("/public/assets/image_data/modules/Buttons/greenrectangle.png")`,
         "background-size": "100% 100%",
         "background-repeat": "no-repeat",
         "object-fit": "contain",
