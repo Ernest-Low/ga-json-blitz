@@ -32,7 +32,7 @@ const afterBattle = {
     $("#blackscreen").append("div").css({
       width: "100%",
       height: "100%",
-      "background-image": `url("/public/assets/image_data/modules/Results/Game Over.png")`,
+      "background-image": `url("/assets/image_data/modules/Results/Game Over.png")`,
       "background-size": "100% 100%",
       "background-repeat": "no-repeat",
       "object-fit": "contain",
@@ -118,7 +118,7 @@ const afterBattle = {
       "flex-direction": "column",
       "align-items": "center",
       "z-index": 0,
-      "background-image": `url("/public/assets/image_data/modules/Results/victory2.png")`,
+      "background-image": `url("/assets/image_data/modules/Results/victory2.png")`,
       "background-size": "100% 100%",
       "background-repeat": "no-repeat",
       "object-fit": "fill",
@@ -201,7 +201,7 @@ const afterBattle = {
     const $goldpic = $("<div>").css({
       width: "35%",
       height: "30%",
-      "background-image": `url("/public/assets/image_data/icons/currency/currency_coin.png")`,
+      "background-image": `url("/assets/image_data/icons/currency/currency_coin.png")`,
       "background-size": "100% 100%",
       "background-repeat": "no-repeat",
       "object-fit": "contain",
@@ -321,7 +321,7 @@ const afterBattle = {
         width: "25%",
         height: "50%",
         "background-image":
-          `url("/public/assets/image_data/modules/Buttons/greenrectangle.png")`,
+          `url("/assets/image_data/modules/Buttons/greenrectangle.png")`,
         "background-size": "100% 100%",
         "background-repeat": "no-repeat",
         "object-fit": "contain",
@@ -359,7 +359,7 @@ const afterBattle = {
         width: "25%",
         height: "50%",
         "background-image":
-          `url("/public/assets/image_data/modules/Buttons/greenrectangle.png")`,
+          `url("/assets/image_data/modules/Buttons/greenrectangle.png")`,
         "background-size": "100% 100%",
         "background-repeat": "no-repeat",
         "object-fit": "contain",
@@ -389,7 +389,7 @@ const afterBattle = {
         width: "25%",
         height: "50%",
         "background-image":
-          `url("/public/assets/image_data/modules/Buttons/greenrectangle.png")`,
+          `url("/assets/image_data/modules/Buttons/greenrectangle.png")`,
         "background-size": "100% 100%",
         "background-repeat": "no-repeat",
         "object-fit": "contain",

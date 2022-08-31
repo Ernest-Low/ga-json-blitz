@@ -54,7 +54,7 @@ const iteminfo = {
           .addClass("tooltipbox")
           .css({
             "background-image":
-              `url("/public/assets/image_data/modules/Panels/rectanglevpanel.png")`,
+              `url("/assets/image_data/modules/Panels/rectanglevpanel.png")`,
             "background-size": "100% 100%",
             "background-repeat": "no-repeat",
             "object-fit": "contain",
@@ -63,7 +63,7 @@ const iteminfo = {
             $("<div>").css({
               width: "10rem",
               height: "10rem",
-              "background-image": `url("/public/assets/${obj.img_src}")`,
+              "background-image": `url("/assets/${obj.img_src}")`,
               "background-size": "100% 100%",
               "background-repeat": "no-repeat",
               "object-fit": "fill",
