@@ -21,7 +21,7 @@ const mainScreen = () => {
 
   //  Mainscreen cover
   const $mainscreen = $("<div>")
-    .attr("id", "mainscreen").lazyload({threshold: 200})
+    .attr("id", "mainscreen")
     .css({
       display: "flex",
       "align-items": "flex-end",

@@ -51,7 +51,7 @@ const iteminfo = {
       .text(`${obj.name}`)
       .append(
         $("<div>")
-          .addClass("tooltipbox").lazyload({threshold: 200})
+          .addClass("tooltipbox")
           .css({
             "background-image":
               `url("/public/assets/image_data/modules/Panels/rectanglevpanel.png")`,
@@ -60,7 +60,7 @@ const iteminfo = {
             "object-fit": "contain",
           })
           .append(
-            $("<div>").lazyload({threshold: 200}).css({
+            $("<div>").css({
               width: "10rem",
               height: "10rem",
               "background-image": `url("/public/assets/${obj.img_src}")`,

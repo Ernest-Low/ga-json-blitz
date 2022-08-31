@@ -19,7 +19,7 @@ const battleScreen = () => {
   });
 
   //  Top scene
-  const $battlescene = $("<div>").attr("id", "battlescene").lazyload({threshold: 200}).css({
+  const $battlescene = $("<div>").attr("id", "battlescene").css({
     width: "100%",
     height: "75%",
     "background-image": `url("/public/assets/${current_entities.zone.img_src}")`,
@@ -55,7 +55,7 @@ const battleScreen = () => {
   });
 
   //  Bottom right panel (4 grid)
-  const $actionpanel = $("<div>").attr("id", "actionpanel").lazyload({threshold: 200}).css({
+  const $actionpanel = $("<div>").attr("id", "actionpanel").css({
     width: "35%",
     height: "100%",
     "background-image": `url("/public/assets/image_data/modules/Panels/4buttons.png")`,
@@ -65,7 +65,7 @@ const battleScreen = () => {
   });
 
   //  Bottom Left Panel (Long box)
-  const $longpanel = $("<div>").attr("id", "longpanel").lazyload({threshold: 200}).css({
+  const $longpanel = $("<div>").attr("id", "longpanel").css({
     width: "65%",
     height: "100%",
     "background-image": `url("/public/assets/image_data/modules/Panels/largehpanel.png")`,

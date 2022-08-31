@@ -38,7 +38,6 @@ const actionSkills = () => {
       .css({
         width: "30%",
         height: "30%",
-        loading: "lazy",
         "background-image": `url("/public/assets/image_data/modules/Buttons/redrectangle.png")`,
         "background-size": "100% 100%",
         "background-repeat": "no-repeat",

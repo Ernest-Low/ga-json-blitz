@@ -29,7 +29,7 @@ const afterBattle = {
   defeat: function () {
     //!  Add a restart button
     //*  Didn't have time for now, but it's needed
-    $("#blackscreen").append("div").lazyload({threshold: 200}).css({
+    $("#blackscreen").append("div").css({
       width: "100%",
       height: "100%",
       "background-image": `url("/public/assets/image_data/modules/Results/Game Over.png")`,
@@ -111,7 +111,7 @@ const afterBattle = {
 
   afterScreen: function (status) {
     //  Append this screen on the black screen
-    const $afterscreen = $("<div>").attr("id", "afterscreen").lazyload({threshold: 200}).css({
+    const $afterscreen = $("<div>").attr("id", "afterscreen").css({
       display: "flex",
       position: "absolute",
       // "justify-content": "space-around",
@@ -198,7 +198,7 @@ const afterBattle = {
       .text(golden_text);
 
     //  Money picture
-    const $goldpic = $("<div>").lazyload({threshold: 200}).css({
+    const $goldpic = $("<div>").css({
       width: "35%",
       height: "30%",
       "background-image": `url("/public/assets/image_data/icons/currency/currency_coin.png")`,
@@ -315,7 +315,7 @@ const afterBattle = {
     //* Shop Button
     //* Inventory Button
 
-    const $nextmatch = $("<div>").lazyload({threshold: 200})
+    const $nextmatch = $("<div>")
       .css({
         flex: "none",
         width: "25%",
@@ -353,7 +353,7 @@ const afterBattle = {
           })
       );
 
-    const $shop = $("<div>").lazyload({threshold: 200})
+    const $shop = $("<div>")
       .css({
         flex: "none",
         width: "25%",
@@ -383,7 +383,7 @@ const afterBattle = {
           })
       );
 
-    const $inventory = $("<div>").lazyload({threshold: 200}).lazyload({threshold: 200})
+    const $inventory = $("<div>")
       .css({
         flex: "none",
         width: "25%",

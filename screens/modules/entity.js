@@ -6,7 +6,7 @@ const $entity_window = (entity) => {
   // const player1 = current_entities.players[0];
   const $infobox = character_info(entity);
 
-  const $image = $("<div>").attr("id", `${entity.id}image`).lazyload({threshold: 200}).css({
+  const $image = $("<div>").attr("id", `${entity.id}image`).css({
     width: "100%",
     height: "60%",
     "background-image": `url("/public/assets/${entity.img_src}")`,
